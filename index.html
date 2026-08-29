@@ -3,6 +3,22 @@
 <head>
     <title>My Space Club</title>
     <style>
+        body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, rgba(120, 215, 255, 0.7) 1px, transparent 1px);
+
+    background-size: 90px 90px, 150px 150px;
+    background-position: 10px 20px, 40px 70px;
+
+    opacity: 0.35;
+        }
 body {
     margin: 0;
     min-height: 100vh;
