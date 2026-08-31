@@ -35,118 +35,65 @@
                 radial-gradient(circle, rgba(120, 215, 255, 0.7) 1px, transparent 1px);
             background-size: 90px 90px, 150px 150px;
             background-position: 10px 20px, 40px 70px;
-            opacity: 0.35;
+            opacity: 0.25;
         }
 
-        /* HERO — identité de mission personnelle */
+        /* HERO — volontairement simple et personnel */
         .hero {
-            position: relative;
-            min-height: 100vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 70px 22px;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 1px;
-            height: 55vh;
-            right: 9%;
-            top: 22%;
-            background: linear-gradient(transparent, rgba(110, 231, 255, 0.45), transparent);
-            opacity: 0.35;
         }
 
         .hero-content {
-            width: min(900px, 100%);
-            position: relative;
-            z-index: 2;
-            text-align: left;
+            width: min(760px, 100%);
         }
 
         .mission-code {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 28px;
+            margin: 0 0 24px;
             color: #6ee7ff;
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 3px;
-            font-weight: bold;
-        }
-
-        .mission-code::before {
-            content: "";
-            width: 38px;
-            height: 1px;
-            background: #6ee7ff;
-            opacity: 0.8;
-        }
-
-        .hero-kicker {
-            margin: 0 0 14px;
-            color: #aeb7d0;
-            font-size: 13px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
         }
 
         .hero h1 {
             margin: 0;
-            max-width: 800px;
-            font-size: clamp(54px, 12vw, 118px);
-            line-height: 0.86;
-            letter-spacing: -4px;
+            font-size: clamp(48px, 11vw, 92px);
+            line-height: 0.95;
+            letter-spacing: -2px;
             font-weight: 700;
         }
 
         .hero h1 span {
-            display: block;
             color: #6ee7ff;
         }
 
         .hero-intro {
-            max-width: 570px;
-            margin: 34px 0 24px;
-            color: #aeb7d0;
+            max-width: 560px;
+            margin: 30px auto 14px;
+            color: #b5bdd1;
             font-size: 17px;
             line-height: 1.8;
         }
 
-        .mission-readout {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 24px;
-            margin: 0 0 34px;
-            color: #7f8ba8;
-            font-size: 10px;
-            letter-spacing: 2px;
-        }
-
-        .mission-readout strong {
-            color: #dce6ff;
-            font-weight: normal;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            flex-wrap: wrap;
+        .hero-small {
+            margin: 0 auto 30px;
+            color: #68738d;
+            font-size: 13px;
+            line-height: 1.6;
         }
 
         .mission-button {
             display: inline-block;
-            padding: 14px 22px;
+            padding: 13px 21px;
             border: 1px solid #6ee7ff;
             border-radius: 5px;
             color: white;
             text-decoration: none;
-            letter-spacing: 1.5px;
             font-size: 13px;
+            letter-spacing: 1px;
             transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
         }
 
@@ -154,21 +101,6 @@
             background: #6ee7ff;
             color: #050816;
             transform: translateY(-2px);
-        }
-
-        .mission-note {
-            color: #66718c;
-            font-size: 12px;
-            letter-spacing: 1px;
-        }
-
-        .hero-coordinate {
-            position: absolute;
-            left: 22px;
-            bottom: 28px;
-            color: #46516b;
-            font-size: 9px;
-            letter-spacing: 2px;
         }
 
         .stars {
@@ -181,9 +113,9 @@
 
         .stars span {
             position: absolute;
-            font-size: 18px;
-            opacity: 0.7;
-            animation: floatStar 7s ease-in-out infinite;
+            font-size: 16px;
+            opacity: 0.5;
+            animation: floatStar 9s ease-in-out infinite;
         }
 
         .stars span:nth-child(1) { top: 12%; left: 8%; }
@@ -197,16 +129,15 @@
 
         @keyframes floatStar {
             0%, 100% {
-                transform: translateX(-35px) rotate(0deg);
-                opacity: 0.4;
+                transform: translateX(-20px);
+                opacity: 0.35;
             }
             50% {
-                transform: translateX(35px) rotate(180deg);
-                opacity: 1;
+                transform: translateX(20px);
+                opacity: 0.7;
             }
         }
 
-        /* Les styles ci-dessous conservent les éléments déjà présents du site. */
         .rov-timeline span {
             color: #6ee7ff;
             font-weight: bold;
@@ -215,13 +146,13 @@
 
         @media (max-width: 650px) {
             .hero {
-                min-height: 92vh;
-                padding: 55px 20px 80px;
+                min-height: 88vh;
+                padding: 55px 20px 70px;
             }
 
             .hero h1 {
-                font-size: clamp(48px, 16vw, 76px);
-                letter-spacing: -2px;
+                font-size: clamp(46px, 15vw, 72px);
+                letter-spacing: -1px;
             }
 
             .hero-intro {
@@ -232,11 +163,6 @@
             .mission-code {
                 font-size: 10px;
                 letter-spacing: 2px;
-            }
-
-            .hero::after {
-                right: 4%;
-                opacity: 0.2;
             }
         }
 
@@ -265,37 +191,28 @@
     </div>
 
     <main>
-        <!-- HERO : première page de la mission -->
+        <!-- HERO : première impression du site -->
         <section class="hero" id="home">
             <div class="hero-content">
-                <div class="mission-code">MISSION 001 / EN APPRENTISSAGE</div>
-
-                <p class="hero-kicker">Journal de mission personnel</p>
+                <div class="mission-code">MISSION 001 · EN APPRENTISSAGE</div>
 
                 <h1>
-                    MY SPACE
+                    MY SPACE<br>
                     <span>CLUB</span>
                 </h1>
 
                 <p class="hero-intro">
-                    Je commence petit. J'apprends, je construis,
-                    je me trompe, puis je recommence.
-                    Chaque projet est une étape vers quelque chose de plus grand.
+                    Je ne sais pas encore jusqu'où j'irai.
+                    Pour l'instant, j'apprends, je construis et j'expérimente.
                 </p>
 
-                <div class="mission-readout">
-                    <span>ORIGINE <strong>BÉNIN</strong></span>
-                    <span>STATUT <strong>EN APPRENTISSAGE</strong></span>
-                    <span>OBJECTIF <strong>CONSTRUIRE</strong></span>
-                </div>
+                <p class="hero-small">
+                    Un petit espace pour garder une trace de ce que je découvre
+                    et de ce que je construis, depuis le Bénin.
+                </p>
 
-                <div class="hero-actions">
-                    <a href="#projects" class="mission-button">VOIR MES PROJETS →</a>
-                    <span class="mission-note">Pas encore arrivé. Juste en route.</span>
-                </div>
+                <a href="#projects" class="mission-button">VOIR CE QUE JE CONSTRUIS →</a>
             </div>
-
-            <div class="hero-coordinate">MSC-001 · 06°22'N · 02°26'E · BÉNIN</div>
         </section>
 
         <section id="about">
@@ -419,7 +336,7 @@
     </main>
 
     <script>
-        // Le Hero utilise volontairement très peu de JavaScript pour rester rapide.
+        // Le Hero reste volontairement léger pour garder le site rapide.
     </script>
 </body>
 </html>
