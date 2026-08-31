@@ -1,361 +1,425 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>My Space Club</title>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Space Club — Marshall</title>
 
- 
     <style>
-        body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-
-    background-image:
-        radial-gradient(circle, white 1px, transparent 1px),
-        radial-gradient(circle, rgba(120, 215, 255, 0.7) 1px, transparent 1px);
-
-    background-size: 90px 90px, 150px 150px;
-    background-position: 10px 20px, 40px 70px;
-
-    opacity: 0.35;
+        * {
+            box-sizing: border-box;
         }
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: #050816;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
 
-.mission-label {
-    margin-top: 120px;
-    color: #6ee7ff;
-    letter-spacing: 5px;
-    font-size: 14px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-h1 {
-    font-size: 70px;
-    line-height: 0.9;
-    margin: 25px 0;
-    letter-spacing: 4px;
-}
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #050816;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-.hero-text {
-    max-width: 550px;
-    margin: 0 auto 30px;
-    color: #aeb7d0;
-    line-height: 1.7;
-    padding: 0 20px;
-}
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image:
+                radial-gradient(circle, white 1px, transparent 1px),
+                radial-gradient(circle, rgba(120, 215, 255, 0.7) 1px, transparent 1px);
+            background-size: 90px 90px, 150px 150px;
+            background-position: 10px 20px, 40px 70px;
+            opacity: 0.35;
+        }
 
-.mission-button {
-    display: inline-block;
-    padding: 14px 22px;
-    border: 1px solid #6ee7ff;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
+        /* HERO — identité de mission personnelle */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 22px;
+            overflow: hidden;
+        }
 
-.mission-button:hover {
-    background: #6ee7ff;
-    color: #050816;
-}
-        /* HERO V2 */
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 55vh;
+            right: 9%;
+            top: 22%;
+            background: linear-gradient(transparent, rgba(110, 231, 255, 0.45), transparent);
+            opacity: 0.35;
+        }
 
-.hero-text {
-    max-width: 600px;
-    margin: 0 auto 30px;
-    color: #aeb7d0;
-    line-height: 1.8;
-    font-size: 16px;
-}
+        .hero-content {
+            width: min(900px, 100%);
+            position: relative;
+            z-index: 2;
+            text-align: left;
+        }
 
-.mission-status {
-    margin: 18px 0;
-    color: #6ee7ff;
-    font-size: 12px;
-    letter-spacing: 3px;
-}
+        .mission-code {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+            color: #6ee7ff;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
 
-.mission-line {
-    width: 90px;
-    height: 1px;
-    margin: 25px auto;
-    background: #6ee7ff;
-    opacity: 0.7;
-}
+        .mission-code::before {
+            content: "";
+            width: 38px;
+            height: 1px;
+            background: #6ee7ff;
+            opacity: 0.8;
+        }
 
-.mission-button {
-    display: inline-block;
-    padding: 14px 24px;
-    border: 1px solid #6ee7ff;
-    border-radius: 6px;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
+        .hero-kicker {
+            margin: 0 0 14px;
+            color: #aeb7d0;
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
 
-.mission-button:hover {
-    background: #6ee7ff;
-    color: #050816;
-}
+        .hero h1 {
+            margin: 0;
+            max-width: 800px;
+            font-size: clamp(54px, 12vw, 118px);
+            line-height: 0.86;
+            letter-spacing: -4px;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #6ee7ff;
+        }
+
+        .hero-intro {
+            max-width: 570px;
+            margin: 34px 0 24px;
+            color: #aeb7d0;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .mission-readout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            margin: 0 0 34px;
+            color: #7f8ba8;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .mission-readout strong {
+            color: #dce6ff;
+            font-weight: normal;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .mission-button {
+            display: inline-block;
+            padding: 14px 22px;
+            border: 1px solid #6ee7ff;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            font-size: 13px;
+            transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+        }
+
         .mission-button:hover {
-    background: #6ee7ff;
-    color: #050816;
-}
-@keyframes floatStar {
-    0% {
-        transform: translateX(-40px) rotate(0deg);
-        opacity: 0.4;
-    }
+            background: #6ee7ff;
+            color: #050816;
+            transform: translateY(-2px);
+        }
 
-    50% {
-        transform: translateX(40px) rotate(180deg);
-        opacity: 1;
-    }
+        .mission-note {
+            color: #66718c;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
 
-    100% {
-        transform: translateX(-40px) rotate(360deg);
-        opacity: 0.4;
-    }
-}
-/* COLLE LE CSS DES ETOILES ICI */
-.stars {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-}
+        .hero-coordinate {
+            position: absolute;
+            left: 22px;
+            bottom: 28px;
+            color: #46516b;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
 
-.stars span {
-    position: absolute;
-    font-size: 18px;
-    opacity: 0.7;
-    animation: floatStar 7s ease-in-out infinite;
-}
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
 
-.stars span:nth-child(1) { top: 12%; left: 8%; }
-.stars span:nth-child(2) { top: 25%; left: 82%; animation-delay: 1s; }
-.stars span:nth-child(3) { top: 42%; left: 18%; animation-delay: 2s; }
-.stars span:nth-child(4) { top: 58%; left: 88%; animation-delay: 3s; }
-.stars span:nth-child(5) { top: 72%; left: 30%; animation-delay: 4s; }
-.stars span:nth-child(6) { top: 85%; left: 70%; animation-delay: 5s; }
-.stars span:nth-child(7) { top: 35%; left: 55%; animation-delay: 2.5s; }
-.stars span:nth-child(8) { top: 65%; left: 5%; animation-delay: 1.5s; }
+        .stars span {
+            position: absolute;
+            font-size: 18px;
+            opacity: 0.7;
+            animation: floatStar 7s ease-in-out infinite;
+        }
 
-@keyframes floatStar {
-    0%, 100% {
-        transform: translateX(-35px) rotate(0deg);
-        opacity: 0.4;
-    }
+        .stars span:nth-child(1) { top: 12%; left: 8%; }
+        .stars span:nth-child(2) { top: 25%; left: 82%; animation-delay: 1s; }
+        .stars span:nth-child(3) { top: 42%; left: 18%; animation-delay: 2s; }
+        .stars span:nth-child(4) { top: 58%; left: 88%; animation-delay: 3s; }
+        .stars span:nth-child(5) { top: 72%; left: 30%; animation-delay: 4s; }
+        .stars span:nth-child(6) { top: 85%; left: 70%; animation-delay: 5s; }
+        .stars span:nth-child(7) { top: 35%; left: 55%; animation-delay: 2.5s; }
+        .stars span:nth-child(8) { top: 65%; left: 5%; animation-delay: 1.5s; }
 
-    50% {
-        transform: translateX(35px) rotate(180deg);
-        opacity: 1;
-    }
-    }
+        @keyframes floatStar {
+            0%, 100% {
+                transform: translateX(-35px) rotate(0deg);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateX(35px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        /* Les styles ci-dessous conservent les éléments déjà présents du site. */
         .rov-timeline span {
-    color: #6ee7ff;
-    font-weight: bold;
-    min-width: 30px;
-}
+            color: #6ee7ff;
+            font-weight: bold;
+            min-width: 30px;
+        }
 
-/* étoiles / autres CSS s'il y en a */
+        @media (max-width: 650px) {
+            .hero {
+                min-height: 92vh;
+                padding: 55px 20px 80px;
+            }
 
+            .hero h1 {
+                font-size: clamp(48px, 16vw, 76px);
+                letter-spacing: -2px;
+            }
 
-</style>
-    
+            .hero-intro {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .mission-code {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            .hero::after {
+                right: 4%;
+                opacity: 0.2;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .stars span {
+                animation: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="stars">
-    <span>⭐</span>
-    <span>✨</span>
-    <span>💫</span>
-    <span>⭐</span>
-    <span>✨</span>
-    <span>💫</span>
-    <span>⭐</span>
-    <span>✨</span>
-    </div>
-        <div class="mission-label">MISSION 001 · MY SPACE CLUB</div>
-
-<h1>THE FIRST<br>ORBIT</h1>
-
-<p class="hero-text">
-    Je commence petit. J'apprends, je construis,
-    je me trompe, puis je recommence.
-    Chaque ligne de code est une étape vers quelque chose de plus grand.
-</p>
-
-<a href="#about" class="mission-button">
-    EXPLORER MON UNIVERS →
-</a>
-    <section id="about">
-    <h2>👨‍🚀 À propos de moi</h2>
-
-    <p>
-        Je m'appelle Marshall et je viens du Bénin.
-        Je suis passionné par la technologie et par tout ce
-        que je peux apprendre et construire avec elle.
-    </p>
-
-    <p>
-        Je veux me former dans plusieurs domaines :
-        informatique, programmation, robotique, électronique
-        et bien d'autres domaines de la tech.
-    </p>
-
-    <p>
-        J'ai beaucoup d'ambition. Mon objectif est de continuer
-        à apprendre, expérimenter et créer jusqu'au jour où
-        je pourrai construire un véritable empire technologique
-        qui contribuera à aider l'humanité.
-    </p>
-</section>
-    </section>
-
-<section id="skills">
-    <h2>🛠️ Mes domaines</h2>
-
-    <p>
-        Je veux explorer plusieurs domaines de la technologie :
-    </p>
-    
-        
-
-    
-        
-        <div class="domaines">
-
-    <article class="domaine">
-        <h3>💻 Informatique</h3>
-        <p>
-            Je veux devenir un informaticien complet, capable de construire
-            des applications, des sites, des jeux et des systèmes d'IA.
-            Je ne veux pas me limiter à un seul domaine : je veux tout
-            comprendre, de la base jusqu'aux systèmes complexes, pour être
-            totalement autonome dans ce que je crée.
-        </p>
-    </article>
-
-    <article class="domaine">
-        <h3>🐍 Programmation</h3>
-        <p>
-            Je repars de zéro en Python parce que je veux une base solide,
-            sans trous. La programmation, c'est mon outil universel :
-            c'est avec elle que je vais construire mes jeux, mon IA,
-            et piloter mon ROV plus tard. Je n'abandonne jamais,
-            même quand je me trompe de syntaxe.
-        </p>
-    </article>
-
-    <article class="domaine">
-        <h3>🤖 Robotique</h3>
-        <p>
-            Je veux construire un ROV sous-marin pour explorer les eaux
-            du Bénin, un projet que personne autour de moi ne fait.
-            La robotique, c'est là où toutes mes compétences se rejoignent :
-            électronique, programmation, mécanique. Je veux prouver
-            qu'on peut créer ça en autodidacte, depuis Cotonou.
-        </p>
-    </article>
-
-    <article class="domaine">
-        <h3>⚡ Électronique</h3>
-        <p>
-            Je veux maîtriser l'électronique parce que c'est le langage
-            physique de mes futurs robots. Sans elle, mon ROV reste une idée.
-            Je pars d'Arduino et de Tinkercad, avec peu de moyens, mais
-            je veux comprendre chaque circuit avant de passer à la suite.
-        </p>
-    </article>
-
-    <article class="domaine">
-        <h3>🚀 Technologies spatiales</h3>
-        <p>
-            Je m'intéresse aux technologies spatiales parce qu'elles pensent
-            les mêmes problèmes que mon ROV : autonomie, capteurs,
-            environnements hostiles. Je veux élargir ma vision au-delà
-            de la Terre, comme les polymathes que j'admire — pas juste
-            apprendre un domaine, mais comprendre comment ils se répondent
-            tous entre eux.
-        </p>
-    </article>
-
-        </div>
-    
-</section> 
-    <section id="rov" class="rov-section">
-
-    <div class="mission-label">MISSION 002 · PROJECT ROV</div>
-
-    <h2>PROJECT ROV</h2>
-
-    <p>
-        Un projet personnel que je veux construire pour explorer
-        les eaux du Bénin et réunir mes connaissances en technologie.
-    </p>
-
-    <div class="rov-info">
-
-        <div>
-            <span>STATUT</span>
-            <strong>CONCEPT / APPRENTISSAGE</strong>
-        </div>
-
-        <div>
-            <span>OBJECTIF</span>
-            <strong>EXPLORER LES EAUX DU BÉNIN</strong>
-        </div>
-
-        <div>
-            <span>DOMAINES</span>
-            <strong>ÉLECTRONIQUE · PROGRAMMATION · ROBOTIQUE · MÉCANIQUE</strong>
-        </div>
-
+    <div class="stars" aria-hidden="true">
+        <span>⭐</span>
+        <span>✨</span>
+        <span>💫</span>
+        <span>⭐</span>
+        <span>✨</span>
+        <span>💫</span>
+        <span>⭐</span>
+        <span>✨</span>
     </div>
 
-    <div class="rov-timeline">
+    <main>
+        <!-- HERO : première page de la mission -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="mission-code">MISSION 001 / EN APPRENTISSAGE</div>
 
-        <div>
-            <span>01</span>
-            <p>Apprendre</p>
-        </div>
+                <p class="hero-kicker">Journal de mission personnel</p>
 
-        <div>
-            <span>02</span>
-            <p>Concevoir</p>
-        </div>
+                <h1>
+                    MY SPACE
+                    <span>CLUB</span>
+                </h1>
 
-        <div>
-            <span>03</span>
-            <p>Prototyper</p>
-        </div>
+                <p class="hero-intro">
+                    Je commence petit. J'apprends, je construis,
+                    je me trompe, puis je recommence.
+                    Chaque projet est une étape vers quelque chose de plus grand.
+                </p>
 
-        <div>
-            <span>04</span>
-            <p>Tester</p>
-        </div>
+                <div class="mission-readout">
+                    <span>ORIGINE <strong>BÉNIN</strong></span>
+                    <span>STATUT <strong>EN APPRENTISSAGE</strong></span>
+                    <span>OBJECTIF <strong>CONSTRUIRE</strong></span>
+                </div>
 
-        <div>
-            <span>05</span>
-            <p>Explorer</p>
-        </div>
+                <div class="hero-actions">
+                    <a href="#projects" class="mission-button">VOIR MES PROJETS →</a>
+                    <span class="mission-note">Pas encore arrivé. Juste en route.</span>
+                </div>
+            </div>
 
-    </div>
+            <div class="hero-coordinate">MSC-001 · 06°22'N · 02°26'E · BÉNIN</div>
+        </section>
 
-    </section>
+        <section id="about">
+            <h2>👨‍🚀 À propos de moi</h2>
+            <p>
+                Je m'appelle Marshall et je viens du Bénin.
+                Je suis passionné par la technologie et par tout ce
+                que je peux apprendre et construire avec elle.
+            </p>
+            <p>
+                Je veux me former dans plusieurs domaines :
+                informatique, programmation, robotique, électronique
+                et bien d'autres domaines de la tech.
+            </p>
+            <p>
+                J'ai beaucoup d'ambition. Mon objectif est de continuer
+                à apprendre, expérimenter et créer jusqu'au jour où
+                je pourrai construire un véritable empire technologique
+                qui contribuera à aider l'humanité.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>🛠️ Mes domaines</h2>
+            <p>Je veux explorer plusieurs domaines de la technologie :</p>
+
+            <div class="domaines">
+                <article class="domaine">
+                    <h3>💻 Informatique</h3>
+                    <p>
+                        Je veux devenir un informaticien complet, capable de construire
+                        des applications, des sites, des jeux et des systèmes d'IA.
+                        Je ne veux pas me limiter à un seul domaine : je veux tout
+                        comprendre, de la base jusqu'aux systèmes complexes, pour être
+                        totalement autonome dans ce que je crée.
+                    </p>
+                </article>
+
+                <article class="domaine">
+                    <h3>🐍 Programmation</h3>
+                    <p>
+                        Je repars de zéro en Python parce que je veux une base solide,
+                        sans trous. La programmation, c'est mon outil universel :
+                        c'est avec elle que je vais construire mes jeux, mon IA,
+                        et piloter mon ROV plus tard. Je n'abandonne jamais,
+                        même quand je me trompe de syntaxe.
+                    </p>
+                </article>
+
+                <article class="domaine">
+                    <h3>🤖 Robotique</h3>
+                    <p>
+                        Je veux construire un ROV sous-marin pour explorer les eaux
+                        du Bénin, un projet que personne autour de moi ne fait.
+                        La robotique, c'est là où toutes mes compétences se rejoignent :
+                        électronique, programmation, mécanique. Je veux prouver
+                        qu'on peut créer ça en autodidacte, depuis Cotonou.
+                    </p>
+                </article>
+
+                <article class="domaine">
+                    <h3>⚡ Électronique</h3>
+                    <p>
+                        Je veux maîtriser l'électronique parce que c'est le langage
+                        physique de mes futurs robots. Sans elle, mon ROV reste une idée.
+                        Je pars d'Arduino et de Tinkercad, avec peu de moyens, mais
+                        je veux comprendre chaque circuit avant de passer à la suite.
+                    </p>
+                </article>
+
+                <article class="domaine">
+                    <h3>🚀 Technologies spatiales</h3>
+                    <p>
+                        Je m'intéresse aux technologies spatiales parce qu'elles pensent
+                        les mêmes problèmes que mon ROV : autonomie, capteurs,
+                        environnements hostiles. Je veux élargir ma vision au-delà
+                        de la Terre, comme les polymathes que j'admire — pas juste
+                        apprendre un domaine, mais comprendre comment ils se répondent
+                        tous entre eux.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="rov" class="rov-section">
+            <div class="mission-label">MISSION 002 · PROJECT ROV</div>
+            <h2>PROJECT ROV</h2>
+            <p>
+                Un projet personnel que je veux construire pour explorer
+                les eaux du Bénin et réunir mes connaissances en technologie.
+            </p>
+
+            <div class="rov-info">
+                <div>
+                    <span>STATUT</span>
+                    <strong>CONCEPT / APPRENTISSAGE</strong>
+                </div>
+                <div>
+                    <span>OBJECTIF</span>
+                    <strong>EXPLORER LES EAUX DU BÉNIN</strong>
+                </div>
+                <div>
+                    <span>DOMAINES</span>
+                    <strong>ÉLECTRONIQUE · PROGRAMMATION · ROBOTIQUE · MÉCANIQUE</strong>
+                </div>
+            </div>
+
+            <div class="rov-timeline">
+                <div><span>01</span><p>Apprendre</p></div>
+                <div><span>02</span><p>Concevoir</p></div>
+                <div><span>03</span><p>Prototyper</p></div>
+                <div><span>04</span><p>Tester</p></div>
+                <div><span>05</span><p>Explorer</p></div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>MES PROJETS</h2>
+            <p>Les projets viendront ici au fur et à mesure que je construis.</p>
+        </section>
+    </main>
+
+    <script>
+        // Le Hero utilise volontairement très peu de JavaScript pour rester rapide.
+    </script>
 </body>
 </html>
-
-
