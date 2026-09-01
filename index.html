@@ -3,34 +3,313 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="My Space Club — l'espace personnel de Marshall pour apprendre, construire et expérimenter depuis le Bénin.">
+<meta name="description" content="My Space Club — l'espace personnel de Marshall, au Bénin.">
 <title>My Space Club — Marshall</title>
 <style>
-:root{--bg:#050816;--text:#f4f7ff;--muted:#aab5cc;--dim:#68758f;--blue:#63d9ff;--violet:#9a8cff;--gold:#e7b95e;--orange:#ff8b62;--line:rgba(150,177,230,.18);--max:1080px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--text);background:radial-gradient(circle at 15% 10%,rgba(63,112,255,.16),transparent 28rem),radial-gradient(circle at 85% 30%,rgba(139,91,255,.12),transparent 30rem),radial-gradient(circle at 50% 90%,rgba(255,128,76,.07),transparent 26rem),var(--bg);font-family:Arial,Helvetica,sans-serif;line-height:1.6;overflow-x:hidden}a{color:inherit}::selection{background:rgba(99,217,255,.25);color:white}body:before,body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2}body:before{opacity:.42;background-image:radial-gradient(circle,rgba(255,255,255,.8) 0 1px,transparent 1.5px),radial-gradient(circle,rgba(99,217,255,.55) 0 1px,transparent 1.5px);background-size:97px 97px,151px 151px;background-position:12px 20px,42px 74px}body:after{z-index:-3;background:linear-gradient(180deg,transparent 0 78%,rgba(5,8,22,.55))}
-.site-nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(calc(100% - 28px),980px);padding:10px 12px 10px 16px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:20;background:rgba(5,8,22,.76);border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(14px)}.brand{text-decoration:none;font-size:12px;font-weight:bold;letter-spacing:2px}.brand span{color:var(--blue)}.nav-links{display:flex;gap:20px}.nav-links a{color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:1px}.nav-links a:hover{color:var(--blue)}
-.hero{position:relative;min-height:100vh;max-width:var(--max);margin:auto;padding:150px 28px 90px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);align-items:center;gap:60px}.hero-copy{position:relative;z-index:2}.eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0 0 24px;color:var(--blue);font-size:11px;letter-spacing:2.5px;text-transform:uppercase}.eyebrow:before{content:"";width:28px;height:1px;background:var(--blue)}.hero h1{margin:0;font-size:clamp(55px,9vw,108px);line-height:.88;letter-spacing:-5px}.hero h1 span{display:block;color:var(--blue)}.hero-lead{max-width:590px;margin:32px 0 16px;color:#c4ccdc;font-size:clamp(17px,2.1vw,20px);line-height:1.7}.hero-note{max-width:500px;margin:0 0 30px;color:var(--dim);font-size:13px}.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px}.button{display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border:1px solid rgba(99,217,255,.7);border-radius:6px;color:white;background:rgba(99,217,255,.04);text-decoration:none;font-size:12px;letter-spacing:1px;transition:.25s ease}.button:hover{background:rgba(99,217,255,.13);border-color:var(--blue);transform:translateY(-2px)}.text-link{color:var(--muted);font-size:12px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px}.text-link:hover{color:white}
-.orbit-stage{position:relative;width:min(360px,75vw);aspect-ratio:1;margin:auto}.planet{position:absolute;width:45%;aspect-ratio:1;left:28%;top:27%;border-radius:50%;background:radial-gradient(circle at 32% 28%,#8eeaff 0 3%,transparent 4%),radial-gradient(circle at 65% 65%,rgba(22,58,126,.9),transparent 45%),linear-gradient(145deg,#2875d5,#17245f 68%,#101638);box-shadow:0 0 50px rgba(76,170,255,.24),inset -18px -14px 30px rgba(2,7,24,.65)}.orbit{position:absolute;inset:9%;border:1px solid rgba(99,217,255,.25);border-radius:50%;transform:rotate(-18deg) scaleY(.55)}.orbit.two{inset:0;transform:rotate(42deg) scaleY(.38);border-color:rgba(154,140,255,.18)}.satellite{position:absolute;top:13%;left:75%;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 16px rgba(231,185,94,.7)}.orbit-label{position:absolute;bottom:8%;left:7%;color:var(--dim);font-size:9px;letter-spacing:2px}.hero-status{position:absolute;right:0;bottom:6%;padding:9px 11px;border-left:2px solid var(--gold);background:rgba(9,15,35,.68);color:var(--muted);font-size:9px;letter-spacing:1.5px}
-section.content-section{width:min(var(--max),calc(100% - 40px));margin:0 auto;padding:110px 0;border-top:1px solid rgba(150,177,230,.1)}.section-heading{max-width:680px;margin-bottom:42px}.section-number{color:var(--gold);font-size:10px;letter-spacing:2px}h2{margin:8px 0 14px;font-size:clamp(32px,6vw,54px);line-height:1;letter-spacing:-2px}.section-heading p,.about-text p,.project-intro{color:var(--muted);max-width:680px}.about-grid{display:grid;grid-template-columns:1fr .65fr;gap:60px}.about-text p{margin:0 0 18px}.small-facts{align-self:start;border-left:1px solid var(--line);padding-left:24px}.fact{margin-bottom:22px}.fact small{display:block;color:var(--dim);font-size:9px;letter-spacing:2px}.fact strong{display:block;margin-top:4px;font-size:14px;font-weight:normal}
-.domains{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.domain{min-height:255px;padding:22px 18px;background:linear-gradient(145deg,rgba(15,25,53,.88),rgba(9,14,32,.72));border:1px solid var(--line);border-radius:10px;transition:transform .25s ease,border-color .25s ease}.domain:hover{transform:translateY(-5px);border-color:rgba(99,217,255,.4)}.domain:nth-child(2){border-top:2px solid var(--violet)}.domain:nth-child(3){border-top:2px solid var(--orange)}.domain:nth-child(4){border-top:2px solid var(--gold)}.domain:nth-child(5){border-top:2px solid var(--blue)}.domain-symbol{display:block;margin-bottom:28px;color:var(--blue);font-size:22px}.domain h3{margin:0 0 12px;font-size:17px}.domain p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}.domain-meta{margin-top:20px;color:var(--dim);font-size:9px;letter-spacing:1px}
-.rov{position:relative;overflow:hidden;padding:44px;border:1px solid rgba(99,217,255,.22);border-radius:14px;background:radial-gradient(circle at 90% 15%,rgba(99,217,255,.12),transparent 18rem),linear-gradient(135deg,rgba(12,26,58,.95),rgba(8,12,28,.9))}.rov:before{content:"ROV";position:absolute;right:-12px;top:20px;color:rgba(255,255,255,.025);font-size:120px;font-weight:bold}.rov-label{color:var(--orange);font-size:10px;letter-spacing:2px}.rov h2{position:relative}.rov>p{position:relative;max-width:650px;color:var(--muted)}.rov-data{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:34px 0}.data-box{padding:16px;border:1px solid var(--line);background:rgba(4,8,20,.35)}.data-box span{display:block;color:var(--dim);font-size:9px;letter-spacing:1.5px}.data-box strong{display:block;margin-top:7px;font-size:12px;font-weight:normal}.timeline{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:38px}.timeline:before{content:"";position:absolute;top:12px;left:0;right:0;height:1px;background:var(--line)}.step{position:relative}.step b{position:relative;display:grid;place-items:center;width:25px;height:25px;margin-bottom:10px;border:1px solid var(--blue);border-radius:50%;background:#091025;color:var(--blue);font-size:9px}.step p{margin:0;color:var(--muted);font-size:11px}
-.journal{display:grid;gap:8px}.journal-entry{display:grid;grid-template-columns:75px 1fr auto;gap:20px;align-items:center;padding:17px 18px;border:1px solid transparent;border-bottom-color:var(--line)}.journal-entry:hover{background:rgba(99,217,255,.035);border-color:var(--line)}.entry-id{color:var(--gold);font-size:10px;letter-spacing:1px}.entry-title{font-size:14px}.entry-status{color:var(--dim);font-size:9px;letter-spacing:1px}.experiments{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.experiment{min-height:190px;padding:24px;border:1px solid var(--line);background:rgba(10,17,37,.62);border-radius:9px}.experiment-status{display:inline-block;margin-bottom:35px;color:var(--blue);font-size:9px;letter-spacing:2px}.experiment h3{margin:0 0 9px;font-size:18px}.experiment p{margin:0;color:var(--muted);font-size:12px}.footer{width:min(var(--max),calc(100% - 40px));margin:30px auto 0;padding:110px 0 45px;border-top:1px solid var(--line);text-align:center}.footer-quote{max-width:600px;margin:0 auto 35px;font-size:clamp(25px,5vw,42px);line-height:1.15;letter-spacing:-1px}.footer-meta{color:var(--dim);font-size:10px;letter-spacing:2px}.footer-meta strong{color:var(--blue);font-weight:normal}.footer-small{margin-top:28px;color:#4f5a73;font-size:10px}.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:850px){.hero{grid-template-columns:1fr;gap:20px;padding-top:140px}.orbit-stage{width:min(300px,70vw)}.domains{grid-template-columns:repeat(2,1fr)}.domain:last-child{grid-column:span 2}.about-grid{grid-template-columns:1fr;gap:35px}.rov-data{grid-template-columns:1fr}.experiments{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.site-nav{top:9px;width:calc(100% - 18px)}.nav-links{gap:11px}.nav-links a{font-size:9px}.brand{font-size:10px}.hero{padding:125px 20px 70px;min-height:100vh}.hero h1{font-size:clamp(50px,16vw,75px);letter-spacing:-3px}.hero-lead{font-size:16px}.orbit-stage{width:240px}section.content-section{width:min(100% - 30px,var(--max));padding:75px 0}.domains{grid-template-columns:1fr}.domain:last-child{grid-column:auto}.domain{min-height:auto}.rov{padding:25px 20px}.timeline{grid-template-columns:1fr;gap:14px}.timeline:before{display:none}.step{display:flex;align-items:center;gap:12px}.step b{margin:0;flex:0 0 25px}.journal-entry{grid-template-columns:55px 1fr;gap:10px}.entry-status{grid-column:2}.experiments{grid-template-columns:1fr}.hero-actions{align-items:flex-start;flex-direction:column}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+:root{
+    --nuit:#070b1b;
+    --bleu:#65d8ff;
+    --bleu-doux:#a8dff0;
+    --violet:#8d7cff;
+    --orange:#ff9a68;
+    --jaune:#e8c45d;
+    --blanc:#f3f5f8;
+    --gris:#a8b1c3;
+    --gris-fonce:#657087;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;
+    background:var(--nuit);
+    color:var(--blanc);
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
+}
+a{color:inherit}
+::selection{background:#65d8ff33;color:#fff}
+
+/* Le fond change doucement de couleur selon les zones de la page. */
+body:before{
+    content:"";
+    position:fixed;
+    inset:-20%;
+    z-index:-2;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 12% 12%,#2358a52b,transparent 25%),
+        radial-gradient(circle at 88% 34%,#6b42a529,transparent 28%),
+        radial-gradient(circle at 55% 86%,#d36a3218,transparent 23%);
+}
+body:after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    opacity:.34;
+    background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#65d8ff 1px,transparent 1px);
+    background-size:113px 113px,181px 181px;
+    background-position:21px 17px,72px 91px;
+}
+
+header,main,footer{width:100%}
+
+.navigation{
+    position:fixed;
+    z-index:10;
+    top:0;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:17px max(22px,calc((100vw - 1120px)/2));
+    background:linear-gradient(#070b1be8,#070b1b00);
+}
+.navigation a{text-decoration:none}
+.logo{font-size:12px;font-weight:bold;letter-spacing:2px}
+.logo span{color:var(--bleu)}
+.menu{display:flex;gap:25px}
+.menu a{font-size:10px;letter-spacing:1.5px;color:var(--gris);transition:color .2s}
+.menu a:hover{color:var(--bleu)}
+
+.hero{
+    min-height:100vh;
+    width:min(1120px,calc(100% - 44px));
+    margin:auto;
+    padding:145px 0 90px;
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    align-items:center;
+    gap:70px;
+}
+.hero-left{position:relative}
+.hero-left:before{
+    content:"";
+    position:absolute;
+    width:7px;height:7px;
+    left:-22px;top:10px;
+    border-radius:50%;
+    background:var(--orange);
+    box-shadow:0 0 18px #ff9a68aa;
+}
+.intro-line{
+    margin:0 0 22px;
+    color:var(--bleu);
+    font-size:11px;
+    letter-spacing:2.5px;
+}
+.hero h1{
+    margin:0;
+    font-size:clamp(58px,9.5vw,116px);
+    line-height:.83;
+    letter-spacing:-6px;
+}
+.hero h1 span{color:var(--bleu);margin-left:42px}
+.phrase{
+    max-width:590px;
+    margin:38px 0 14px;
+    font-size:clamp(18px,2.4vw,23px);
+    color:#d4d9e4;
+}
+.phrase em{font-style:normal;color:white}
+.hero-small{max-width:520px;margin:0;color:var(--gris);font-size:13px}
+.hero-link{
+    display:inline-block;
+    margin-top:31px;
+    padding:12px 18px 11px;
+    border:1px solid #65d8ff99;
+    border-radius:3px;
+    text-decoration:none;
+    font-size:11px;
+    letter-spacing:1.4px;
+    transition:.2s;
+}
+.hero-link:hover{background:#65d8ff12;border-color:var(--bleu);transform:translateX(3px)}
+
+/* Petit dessin CSS : il remplace les décorations de template. */
+.sky-sketch{height:390px;position:relative}
+.planet-small{
+    position:absolute;
+    width:155px;height:155px;
+    right:48px;top:85px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 30% 25%,#d5f5ff 0 2%,transparent 3%),
+        radial-gradient(circle at 65% 64%,#182d6e 0 22%,transparent 23%),
+        linear-gradient(145deg,#328cd1,#1d347e 62%,#111a43);
+    box-shadow:-18px 15px 45px #2b83d444,inset -22px -18px 28px #02061188;
+}
+.ring{position:absolute;width:270px;height:78px;right:-8px;top:123px;border:1px solid #65d8ff55;border-radius:50%;transform:rotate(-17deg)}
+.ring.two{width:310px;height:105px;right:-28px;top:109px;border-color:#8d7cff40;transform:rotate(31deg)}
+.spark{position:absolute;color:var(--jaune);font-size:18px}
+.spark.one{right:24px;top:35px}.spark.two{right:225px;top:245px;color:var(--orange);font-size:13px}.spark.three{right:95px;bottom:30px;color:var(--bleu);font-size:9px}
+.coordinates{position:absolute;right:0;bottom:36px;color:var(--gris-fonce);font-size:9px;letter-spacing:2px}
+
+.bloc{width:min(1120px,calc(100% - 44px));margin:0 auto;padding:105px 0}
+.bloc + .bloc{border-top:1px solid #ffffff12}
+.section-title{max-width:700px;margin-bottom:45px}
+.section-title .numero{color:var(--jaune);font-size:10px;letter-spacing:2px}
+h2{font-size:clamp(34px,6vw,58px);line-height:.98;letter-spacing:-3px;margin:9px 0 15px}
+.section-title p{color:var(--gris);max-width:600px;margin:0}
+
+.about-layout{display:grid;grid-template-columns:1.4fr .6fr;gap:80px}
+.about-layout p{color:#c0c7d5;margin:0 0 19px;max-width:680px}
+.note-side{padding-top:10px;color:var(--gris-fonce);font-size:11px;border-left:1px solid #65d8ff55;padding-left:20px}
+.note-side strong{display:block;color:var(--bleu-doux);font-size:13px;font-weight:normal;margin:4px 0 24px}
+
+.domaines{display:grid;grid-template-columns:1.35fr .85fr .85fr;gap:0;align-items:stretch}
+.domaine{padding:26px 28px 30px;border-top:1px solid #ffffff20;border-right:1px solid #ffffff13;min-height:205px}
+.domaine:first-child{grid-row:span 2;padding:34px 38px 35px;background:#10234b45;border-top:2px solid var(--bleu)}
+.domaine:nth-child(2){border-top:2px solid var(--violet)}
+.domaine:nth-child(3){border-top:2px solid var(--orange)}
+.domaine:nth-child(4){border-top:2px solid var(--jaune)}
+.domaine:nth-child(5){border-top:2px solid var(--bleu)}
+.domaine:nth-child(5){grid-column:2 / span 2}
+.domaine h3{margin:0 0 13px;font-size:18px;font-weight:normal}
+.domaine:first-child h3{font-size:27px}
+.domaine p{margin:0;color:var(--gris);font-size:12px;max-width:450px}
+.domaine .petit{margin-top:21px;color:var(--gris-fonce);font-size:9px;letter-spacing:1.3px}
+
+.rov-zone{position:relative;padding:60px 0 70px;min-height:500px}
+.rov-zone:before{content:"";position:absolute;right:3%;top:10px;width:1px;height:85%;background:linear-gradient(var(--orange),transparent)}
+.rov-zone:after{content:"";position:absolute;right:3%;top:10px;width:70px;height:70px;border:1px solid #65d8ff45;border-left:0;border-bottom:0}
+.rov-title{font-size:clamp(55px,11vw,125px);line-height:.8;letter-spacing:-7px;margin:0 0 35px;color:#dce7f7}
+.rov-title span{color:var(--orange)}
+.rov-copy{max-width:670px;color:#bac3d4;font-size:15px}
+.rov-details{display:flex;gap:45px;flex-wrap:wrap;margin-top:40px}
+.detail{min-width:180px}.detail small{display:block;color:var(--gris-fonce);font-size:9px;letter-spacing:1.5px}.detail strong{display:block;margin-top:6px;color:#e9edf5;font-size:12px;font-weight:normal}
+.rov-plan{margin-top:58px;display:flex;align-items:flex-start;gap:0;max-width:850px}
+.rov-plan div{position:relative;flex:1;padding:16px 12px 0 0;border-top:1px solid #ffffff25}
+.rov-plan div:first-child{border-top-color:var(--bleu)}
+.rov-plan b{font-size:9px;color:var(--jaune);font-weight:normal}.rov-plan p{margin:6px 0 0;color:var(--gris);font-size:11px}
+
+.journal-wrap{max-width:850px}
+.journal-item{display:grid;grid-template-columns:55px 1fr;gap:18px;padding:19px 0;border-bottom:1px solid #ffffff13}
+.journal-item:nth-child(2){padding-left:35px}.journal-item:nth-child(4){padding-left:16px}.journal-item:nth-child(5){padding-left:55px}
+.j-id{color:var(--jaune);font-size:10px;padding-top:3px}
+.journal-item h3{margin:0;font-size:15px;font-weight:normal}.journal-item p{margin:4px 0 0;color:var(--gris);font-size:12px}
+
+.experiences{display:grid;grid-template-columns:1.5fr .7fr;gap:0 55px;align-items:start}
+.experience{padding:22px 0;border-bottom:1px solid #ffffff14}.experience:nth-child(2){margin-top:55px}.experience:nth-child(3){grid-column:1 / span 2;max-width:700px}
+.experience .etat{font-size:9px;letter-spacing:1.5px;color:var(--bleu)}
+.experience h3{margin:8px 0 5px;font-size:20px;font-weight:normal}.experience p{margin:0;color:var(--gris);font-size:12px}
+
+footer{padding:100px 22px 45px;text-align:center;border-top:1px solid #ffffff12}
+.footer-phrase{max-width:650px;margin:0 auto 38px;font-size:clamp(26px,5vw,44px);line-height:1.15;letter-spacing:-1.5px}
+.footer-name{font-size:10px;letter-spacing:2px;color:var(--gris)}.footer-name span{color:var(--bleu)}
+.footer-small{margin-top:25px;color:#4e5a70;font-size:9px;letter-spacing:1px}
+
+@media(max-width:800px){
+    .hero{grid-template-columns:1fr;gap:20px;padding-top:125px}.sky-sketch{height:280px}.planet-small{right:25%;width:125px;height:125px}.ring{right:10%;top:85px;width:235px}.ring.two{right:2%;top:73px}.coordinates{bottom:10px}
+    .about-layout{grid-template-columns:1fr;gap:25px}.note-side{border-left:0;border-top:1px solid #65d8ff44;padding:20px 0 0}
+    .domaines{grid-template-columns:1fr 1fr}.domaine:first-child{grid-row:auto;grid-column:1 / span 2}.domaine:nth-child(5){grid-column:1 / span 2}
+    .experiences{grid-template-columns:1fr}.experience:nth-child(2){margin-top:0}.experience:nth-child(3){grid-column:auto}
+}
+@media(max-width:560px){
+    .navigation{padding:15px 17px}.menu{gap:10px}.menu a{font-size:8px}.logo{font-size:10px}
+    .hero,.bloc{width:calc(100% - 32px)}.hero{padding-top:115px}.hero h1{font-size:17vw;letter-spacing:-3px}.hero h1 span{margin-left:20px}.phrase{font-size:17px;margin-top:30px}.hero-small{font-size:12px}
+    .sky-sketch{height:235px}.planet-small{width:105px;height:105px;right:22%;top:55px}.ring{width:190px;height:62px;right:4%;top:75px}.ring.two{width:215px;height:70px;right:-2%;top:70px}.spark.one{right:3px}.spark.two{right:180px}
+    .bloc{padding:75px 0}.section-title{margin-bottom:30px}h2{font-size:38px}.domaines{display:block}.domaine,.domaine:first-child{min-height:auto;padding:24px 20px}.domaine:nth-child(5){display:block}.rov-zone{padding:35px 0}.rov-title{font-size:21vw;letter-spacing:-4px}.rov-plan{display:block}.rov-plan div{padding:13px 0;border-top:1px solid #ffffff20}.rov-zone:before,.rov-zone:after{display:none}
+    .journal-item:nth-child(2),.journal-item:nth-child(4),.journal-item:nth-child(5){padding-left:0}.journal-item{grid-template-columns:45px 1fr}.footer-phrase{font-size:29px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-link{transition:none}}
 </style>
 </head>
 <body>
-<nav class="site-nav" aria-label="Navigation principale"><a class="brand" href="#home">MY <span>SPACE</span> CLUB</a><div class="nav-links"><a href="#about">MOI</a><a href="#domains">DOMAINES</a><a href="#rov">ROV</a><a href="#journal">JOURNAL</a></div></nav>
-<main>
-<header class="hero" id="home"><div class="hero-copy"><p class="eyebrow">Mission 001 · en apprentissage</p><h1>MY SPACE<br><span>CLUB</span></h1><p class="hero-lead">Je ne sais pas encore jusqu'où j'irai. Pour l'instant, j'apprends, je construis et j'expérimente.</p><p class="hero-note">Un petit espace pour garder une trace de ce que je découvre et de ce que je construis, depuis le Bénin.</p><div class="hero-actions"><a class="button" href="#projects">Voir ce que je construis <span>→</span></a><a class="text-link" href="#about">En savoir un peu plus sur moi</a></div></div><div class="orbit-stage" aria-hidden="true"><div class="orbit"></div><div class="orbit two"></div><div class="planet"></div><div class="satellite"></div><div class="orbit-label">BENIN · 06°N · 02°E</div><div class="hero-status">STATUS — BUILDING</div></div></header>
-<section class="content-section reveal" id="about"><div class="section-heading"><span class="section-number">01 / À PROPOS</span><h2>Je suis Marshall.</h2><p>Pas besoin d'en faire trop. Voici simplement ce qui m'amène ici.</p></div><div class="about-grid"><div class="about-text"><p>Je viens du Bénin et je suis passionné par la technologie. J'aime comprendre comment les choses fonctionnent, surtout quand je peux ensuite essayer de fabriquer quelque chose moi-même.</p><p>Je veux apprendre sérieusement, en commençant par les bases. Python, informatique, électronique, robotique, IA et technologies spatiales m'intéressent, mais je ne veux pas seulement collectionner des connaissances : je veux les utiliser.</p><p>Je sais que je suis encore au début. C'est justement ce qui me plaît. Ce site va évoluer avec moi, au fur et à mesure de mes essais, de mes erreurs et de mes projets.</p></div><aside class="small-facts"><div class="fact"><small>ORIGINE</small><strong>Bénin 🇧🇯</strong></div><div class="fact"><small>ÉTAT ACTUEL</small><strong>J'apprends en construisant</strong></div><div class="fact"><small>GRANDE CURIOSITÉ</small><strong>Comprendre les systèmes complexes</strong></div></aside></div></section>
-<section class="content-section reveal" id="domains"><div class="section-heading"><span class="section-number">02 / CE QUI M'INTÉRESSE</span><h2>Plusieurs terrains d'exploration.</h2><p>Je préfère apprendre plusieurs choses et comprendre les liens entre elles.</p></div><div class="domains"><article class="domain"><span class="domain-symbol">⌘</span><h3>Informatique</h3><p>Comprendre les systèmes, créer des outils et apprendre à résoudre des problèmes.</p><div class="domain-meta">EN APPRENTISSAGE</div></article><article class="domain"><span class="domain-symbol">{ }</span><h3>Programmation</h3><p>Je repars de zéro en Python pour construire une base solide.</p><div class="domain-meta">OBJECTIF · BASES SOLIDES</div></article><article class="domain"><span class="domain-symbol">◉</span><h3>Robotique</h3><p>Faire communiquer logiciel, électronique et mécanique dans de vrais objets.</p><div class="domain-meta">PROJET ASSOCIÉ · ROV</div></article><article class="domain"><span class="domain-symbol">ϟ</span><h3>Électronique</h3><p>Comprendre les circuits et les capteurs qui donneront une forme physique à mes idées.</p><div class="domain-meta">EN APPRENTISSAGE</div></article><article class="domain"><span class="domain-symbol">✦</span><h3>Espace</h3><p>Observer les technologies spatiales et les problèmes qu'elles cherchent à résoudre.</p><div class="domain-meta">CURIOSITÉ · EXPLORATION</div></article></div></section>
-<section class="content-section reveal" id="rov"><div class="rov"><span class="rov-label">MISSION 002 · PROJET PERSONNEL</span><h2>PROJECT ROV</h2><p>Mon grand projet à long terme : construire un ROV sous-marin capable d'explorer les eaux du Bénin. Pour l'instant, il est encore au stade de l'apprentissage et du concept. C'est volontairement honnête.</p><div class="rov-data"><div class="data-box"><span>STATUT</span><strong>Concept / apprentissage</strong></div><div class="data-box"><span>OBJECTIF</span><strong>Explorer les eaux du Bénin</strong></div><div class="data-box"><span>DOMAINES</span><strong>Électronique · code · robotique · mécanique</strong></div></div><div class="timeline"><div class="step"><b>01</b><p>Apprendre</p></div><div class="step"><b>02</b><p>Concevoir</p></div><div class="step"><b>03</b><p>Prototyper</p></div><div class="step"><b>04</b><p>Tester</p></div><div class="step"><b>05</b><p>Explorer</p></div></div></div></section>
-<section class="content-section reveal" id="journal"><div class="section-heading"><span class="section-number">03 / JOURNAL DE BORD</span><h2>Les petites étapes comptent.</h2><p>Ce journal pourra grandir avec mes apprentissages.</p></div><div class="journal"><article class="journal-entry"><span class="entry-id">[001]</span><span class="entry-title">Premiers pas en Python</span><span class="entry-status">EN APPRENTISSAGE</span></article><article class="journal-entry"><span class="entry-id">[002]</span><span class="entry-title">Premier site avec HTML</span><span class="entry-status">EN CONSTRUCTION</span></article><article class="journal-entry"><span class="entry-id">[003]</span><span class="entry-title">Découverte de GitHub</span><span class="entry-status">EN APPRENTISSAGE</span></article><article class="journal-entry"><span class="entry-id">[004]</span><span class="entry-title">Premiers circuits Arduino</span><span class="entry-status">EXPÉRIMENTAL</span></article><article class="journal-entry"><span class="entry-id">[005]</span><span class="entry-title">L'idée du ROV</span><span class="entry-status">CONCEPT</span></article></div></section>
-<section class="content-section reveal" id="projects"><div class="section-heading"><span class="section-number">04 / MES EXPÉRIENCES</span><h2>Je construis au fur et à mesure.</h2><p>Pas de faux projets ici. Cette partie évoluera quand j'aurai réellement quelque chose à montrer.</p></div><div class="experiments"><article class="experiment"><span class="experiment-status">EN CONSTRUCTION</span><h3>My Space Club</h3><p>Mon premier espace personnel sur le web, construit avec HTML, CSS et JavaScript.</p></article><article class="experiment"><span class="experiment-status">APPRENTISSAGE</span><h3>Python</h3><p>Reprendre les bases et comprendre le langage avant de passer à des systèmes plus complexes.</p></article><article class="experiment"><span class="experiment-status">CONCEPT</span><h3>ROV sous-marin</h3><p>Une idée à long terme qui réunira progressivement mes compétences en robotique et électronique.</p></article></div></section>
+<nav class="navigation">
+    <a class="logo" href="#top">MY <span>SPACE</span> CLUB</a>
+    <div class="menu">
+        <a href="#moi">MOI</a>
+        <a href="#domaines">DOMAINES</a>
+        <a href="#rov">ROV</a>
+        <a href="#journal">JOURNAL</a>
+    </div>
+</nav>
+
+<main id="top">
+<header class="hero">
+    <div class="hero-left">
+        <p class="intro-line">UN ESPACE PERSONNEL · BÉNIN</p>
+        <h1>MY SPACE<br><span>CLUB</span></h1>
+        <p class="phrase">Je ne sais pas encore jusqu'où j'irai. <em>Pour l'instant, j'apprends, je construis et j'expérimente.</em></p>
+        <p class="hero-small">Un endroit pour garder une trace de ce que je découvre, des idées qui arrivent et des projets qui prennent forme.</p>
+        <a class="hero-link" href="#domaines">ENTRER DANS MON UNIVERS →</a>
+    </div>
+    <div class="sky-sketch" aria-hidden="true">
+        <div class="ring"></div><div class="ring two"></div><div class="planet-small"></div>
+        <span class="spark one">✦</span><span class="spark two">✧</span><span class="spark three">•</span>
+        <div class="coordinates">06°N · 02°E / BÉNIN</div>
+    </div>
+</header>
+
+<section class="bloc" id="moi">
+    <div class="section-title"><span class="numero">01</span><h2>Je suis Marshall.</h2><p>Pas une biographie. Juste quelques lignes pour expliquer pourquoi cet espace existe.</p></div>
+    <div class="about-layout">
+        <div>
+            <p>Je viens du Bénin et je suis passionné par la technologie. J'aime comprendre comment les choses fonctionnent et surtout essayer de fabriquer quelque chose avec ce que j'apprends.</p>
+            <p>Je m'intéresse à l'informatique, à Python, à la robotique, à l'électronique, à l'intelligence artificielle et aux technologies spatiales. Je ne cherche pas à choisir tout de suite un seul chemin.</p>
+            <p>Je veux comprendre les bases avant de m'attaquer aux systèmes compliqués. Alors ce site va probablement changer souvent. C'est normal : il va grandir avec moi.</p>
+        </div>
+        <aside class="note-side">CE QUE J'ESSAIE DE FAIRE<strong>Apprendre en construisant.</strong>CE QUE JE CHERCHE<strong>Devenir assez polyvalent pour passer d'une idée à un vrai projet.</strong></aside>
+    </div>
+</section>
+
+<section class="bloc" id="domaines">
+    <div class="section-title"><span class="numero">02</span><h2>Ce qui m'intéresse.</h2><p>Je ne suis pas encore expert dans ces domaines. Certains sont nouveaux pour moi. C'est justement le but.</p></div>
+    <div class="domaines">
+        <article class="domaine"><h3>Informatique</h3><p>Comprendre les systèmes, résoudre des problèmes et devenir suffisamment autonome pour créer mes propres outils.</p><div class="petit">JE VEUX COMPRENDRE LE POURQUOI</div></article>
+        <article class="domaine"><h3>Programmation</h3><p>Je reprends Python depuis les bases pour construire quelque chose de solide.</p><div class="petit">PYTHON · EN APPRENTISSAGE</div></article>
+        <article class="domaine"><h3>Robotique</h3><p>Faire travailler ensemble du code, des capteurs, des moteurs et une vraie machine.</p><div class="petit">LE ROV M'INTÉRESSE PARTICULIÈREMENT</div></article>
+        <article class="domaine"><h3>Électronique</h3><p>Comprendre les circuits et les composants qui donnent une forme physique aux idées.</p><div class="petit">APPRENDRE EN TESTANT</div></article>
+        <article class="domaine"><h3>Technologies spatiales</h3><p>Observer comment on construit des machines capables de fonctionner dans des environnements difficiles et lointains.</p><div class="petit">CURIOSITÉ · EXPLORATION</div></article>
+    </div>
+</section>
+
+<section class="bloc" id="rov">
+    <div class="rov-zone">
+        <div class="section-title"><span class="numero">03 · PROJET QUI ME TIENT À CŒUR</span></div>
+        <h2 class="rov-title">PROJECT <span>ROV</span></h2>
+        <p class="rov-copy">À long terme, je veux construire un ROV sous-marin capable d'explorer les eaux du Bénin. Aujourd'hui, ce n'est pas encore une machine : c'est un objectif qui m'oblige à apprendre beaucoup de choses.</p>
+        <div class="rov-details">
+            <div class="detail"><small>OÙ J'EN SUIS</small><strong>Concept / apprentissage</strong></div>
+            <div class="detail"><small>CE QUE JE VEUX FAIRE</small><strong>Explorer les eaux du Bénin</strong></div>
+            <div class="detail"><small>CE QU'IL FAUDRA APPRENDRE</small><strong>Code · électronique · robotique · mécanique</strong></div>
+        </div>
+        <div class="rov-plan">
+            <div><b>01</b><p>Apprendre</p></div><div><b>02</b><p>Concevoir</p></div><div><b>03</b><p>Prototyper</p></div><div><b>04</b><p>Tester</p></div><div><b>05</b><p>Explorer</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="bloc" id="journal">
+    <div class="section-title"><span class="numero">04</span><h2>Journal de bord.</h2><p>Les choses que j'apprends aujourd'hui deviendront peut-être les outils de mes projets de demain.</p></div>
+    <div class="journal-wrap">
+        <article class="journal-item"><span class="j-id">001</span><div><h3>Premiers pas en Python</h3><p>Je travaille les bases : chaînes de caractères, affichage avec <code>print()</code> et types de données.</p></div></article>
+        <article class="journal-item"><span class="j-id">002</span><div><h3>Mon premier site avec HTML</h3><p>My Space Club est aussi un exercice pour comprendre comment fonctionne un site web.</p></div></article>
+        <article class="journal-item"><span class="j-id">003</span><div><h3>Découverte de GitHub</h3><p>Je découvre les dépôts, les commits et la façon de publier mon site avec GitHub Pages.</p></div></article>
+        <article class="journal-item"><span class="j-id">004</span><div><h3>Arduino et électronique</h3><p>Je commence à m'intéresser aux circuits et à la manière de faire communiquer le logiciel avec le monde réel.</p></div></article>
+        <article class="journal-item"><span class="j-id">005</span><div><h3>L'idée du ROV</h3><p>Une idée de long terme qui rassemble plusieurs choses que je veux apprendre.</p></div></article>
+    </div>
+</section>
+
+<section class="bloc" id="experiences">
+    <div class="section-title"><span class="numero">05</span><h2>Ce que je construis.</h2><p>Cette liste n'est pas là pour impressionner. Elle est là pour montrer où j'en suis réellement.</p></div>
+    <div class="experiences">
+        <article class="experience"><span class="etat">EN CONSTRUCTION</span><h3>My Space Club</h3><p>Mon espace personnel, construit avec HTML, CSS et JavaScript sur GitHub Pages.</p></article>
+        <article class="experience"><span class="etat">EN APPRENTISSAGE</span><h3>Python</h3><p>Une base que je veux comprendre correctement avant d'aller plus loin.</p></article>
+        <article class="experience"><span class="etat">CONCEPT</span><h3>ROV sous-marin</h3><p>Le grand projet. Il commencera réellement quand j'aurai les connaissances et les prototypes nécessaires.</p></article>
+    </div>
+</section>
 </main>
-<footer class="footer"><p class="footer-quote">Je ne sais pas encore jusqu'où cette aventure ira. Mais je compte bien le découvrir.</p><div class="footer-meta">MY SPACE CLUB · <strong>MARSHALL — BÉNIN</strong></div><div class="footer-meta" style="margin-top:10px;">TECH · BUILD · LEARN · EXPLORE</div><div class="footer-small">Construit progressivement, une expérience après l'autre · <span id="year"></span></div></footer>
-<script>const items=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target)}})},{threshold:.12});items.forEach(item=>observer.observe(item))}else{items.forEach(item=>item.classList.add('visible'))}document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<footer>
+    <p class="footer-phrase">Je ne sais pas encore jusqu'où cette aventure ira.<br>Mais je compte bien le découvrir.</p>
+    <div class="footer-name">MY SPACE CLUB · <span>MARSHALL — BÉNIN</span></div>
+    <div class="footer-name" style="margin-top:9px">TECH · BUILD · LEARN · EXPLORE</div>
+    <div class="footer-small">Le site évoluera au fil des projets.</div>
+</footer>
 </body>
 </html>
