@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stardance — le projet de Marshall pour construire et apprendre depuis le Bénin.">
+  <title>Stardance — My Space Club</title>
+  <style>
+    :root{--fond:#0d1117;--texte:#e7ebf0;--gris:#9aa5b1;--bleu:#78b7d9;--ligne:#29313c;}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--fond);color:var(--texte);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;opacity:.14;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:48px 48px}
+    a{color:inherit}.bar{position:fixed;top:0;left:0;right:0;z-index:10;padding:17px 5vw;background:rgba(13,17,23,.94);border-bottom:1px solid var(--ligne);display:flex;justify-content:space-between}.nom{text-decoration:none;font-size:12px;font-weight:bold;letter-spacing:1.8px}.nom span,.tag{color:var(--bleu)}.retour{color:var(--gris);text-decoration:none;font-size:11px}.retour:hover{color:var(--texte)}
+    main{width:min(900px,calc(100% - 34px));margin:auto}.hero{min-height:80vh;display:flex;align-items:center;padding:130px 0 70px}.eyebrow{color:var(--bleu);font-size:11px;letter-spacing:1.6px;text-transform:uppercase}.hero h1{font-size:clamp(54px,11vw,110px);line-height:.9;letter-spacing:-5px;margin:20px 0}.hero h1 span{display:block;color:var(--bleu);margin-left:45px}.lead{max-width:650px;font-size:clamp(19px,3vw,25px);color:#d4dae2}.muted{max-width:650px;color:var(--gris);font-size:14px}.button{display:inline-block;margin-top:24px;border:1px solid #536271;padding:10px 15px;text-decoration:none;font-size:11px}.button:hover{border-color:var(--bleu);color:var(--bleu)}
+    section{padding:75px 0;border-top:1px solid var(--ligne)}h2{font-size:clamp(34px,6vw,58px);line-height:1;margin:0 0 30px;letter-spacing:-2.5px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--ligne)}.card{padding:25px;background:rgba(21,27,35,.45);min-height:180px}.number{color:var(--bleu);font-size:11px}.card h3{font-size:19px;font-weight:normal;margin:12px 0 7px}.card p{color:var(--gris);font-size:13px;margin:0}
+    .project{max-width:760px}.project p{color:#c5ccd5}.status{display:flex;flex-wrap:wrap;gap:28px;margin-top:32px;padding-top:20px;border-top:1px solid var(--ligne)}.status small{display:block;color:var(--gris);font-size:10px}.status span{font-size:13px}.log{border-top:1px solid var(--ligne)}.log div{padding:17px 0;border-bottom:1px solid var(--ligne);display:flex;gap:25px}.log time{flex:0 0 90px;color:var(--bleu);font-size:10px}.log p{margin:0;color:var(--gris);font-size:13px}.cta{padding-bottom:100px}.cta p{max-width:650px;font-size:clamp(25px,5vw,42px);line-height:1.15;letter-spacing:-1px}.small{color:#687381;font-size:11px}
+    @media(max-width:700px){.bar{padding:14px 17px}.retour{font-size:10px}.hero{padding-top:105px;min-height:76vh}.hero h1{font-size:clamp(50px,17vw,80px);letter-spacing:-3.5px}.hero h1 span{margin-left:22px}.grid{grid-template-columns:1fr}.card{min-height:auto}.log div{display:block}.log time{display:block;margin-bottom:5px}}
+  </style>
+</head>
+<body>
+  <header class="bar"><a class="nom" href="index.html">MY <span>SPACE</span> CLUB</a><a class="retour" href="index.html">← Retour au site</a></header>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Projet · Stardance · Bénin</div>
+        <h1>STARDANCE<span>MISSION</span></h1>
+        <p class="lead">Construire quelque chose de réel, le publier et apprendre en chemin.</p>
+        <p class="muted">Cette page suivra mon travail pendant Stardance. Je pars de mes connaissances actuelles et je vais avancer étape par étape.</p>
+        <a class="button" href="#mission">Voir la mission ↓</a>
+      </div>
+    </section>
+    <section id="mission">
+      <h2>La mission</h2>
+      <div class="project"><p>Mon objectif n'est pas de faire un projet énorme juste pour impressionner. Je veux construire un projet que je comprends, documenter les étapes et être capable d'expliquer mes choix.</p><p>My Space Club devient mon espace de travail public : ce que j'apprends, ce que je teste, ce qui fonctionne et ce qui doit être recommencé.</p></div>
+      <div class="status"><div><small>Créateur</small><span>Marshall</span></div><div><small>Lieu</small><span>Bénin</span></div><div><small>Statut</small><span>En construction</span></div><div><small>Technologies</small><span>HTML · CSS · JavaScript</span></div></div>
+    </section>
+    <section>
+      <h2>Plan de construction</h2>
+      <div class="grid">
+        <article class="card"><div class="number">01</div><h3>Construire</h3><p>Améliorer My Space Club et transformer mes idées en quelque chose de fonctionnel.</p></article>
+        <article class="card"><div class="number">02</div><h3>Documenter</h3><p>Noter les étapes importantes et les problèmes rencontrés au lieu de cacher les erreurs.</p></article>
+        <article class="card"><div class="number">03</div><h3>Publier</h3><p>Mettre le projet en ligne pour qu'il puisse être testé et découvert.</p></article>
+      </div>
+    </section>
+    <section>
+      <h2>Journal Stardance</h2>
+      <div class="log">
+        <div><time>01.09.2026</time><p>Création de cette page de mission et préparation de la prochaine version de My Space Club.</p></div>
+        <div><time>À venir</time><p>Premier objectif technique : choisir et construire une fonctionnalité concrète à présenter.</p></div>
+      </div>
+    </section>
+    <section class="cta">
+      <p>Le projet n'est pas terminé. C'est justement pour ça que cette page existe.</p>
+      <a class="button" href="index.html">Retour à My Space Club</a>
+      <p class="small">My Space Club · Marshall · Bénin · 2026</p>
+    </section>
+  </main>
+</body>
+</html>
