@@ -17,7 +17,7 @@ Un de mes projets à long terme est de construire un ROV sous-marin capable d'ex
 - JavaScript vanilla
 - GitHub Pages
 
-Tout tient actuellement dans un seul fichier `index.html` pour rester simple à comprendre et à modifier.
+Le projet reste volontairement simple : les pages principales sont des fichiers HTML/CSS/JavaScript sans framework.
 
 ## Ce qui fonctionne
 
@@ -26,7 +26,15 @@ Tout tient actuellement dans un seul fichier `index.html` pour rester simple à 
 - journal de bord avec filtre par catégorie
 - apparition discrète des sections avec `IntersectionObserver`
 - navigation fluide entre les sections
-- HTML sémantique et texte alternatif/accessibilité pris en compte quand nécessaire
+- page dédiée au projet Stardance
+- page dédiée au projet ROV
+- HTML sémantique et accessibilité pris en compte quand nécessaire
+
+## Structure du projet
+
+- `index.html` — site principal
+- `stardance.html` — page du projet Stardance
+- `README.md` — documentation du projet
 
 ## Ce que j'apprends en construisant le site
 
@@ -36,6 +44,17 @@ Le site n'est pas considéré comme terminé. Je veux continuer à l'améliorer 
 
 ## Stardance
 
-Ce projet est destiné à la mission **Personal Site** de Stardance.
+Ce projet est destiné à la mission **Personal Site** de Stardance 2026.
 
-Le code source est public et le site est déployé avec GitHub Pages.
+Le projet est open source, le dépôt est public et le site est prévu pour être déployé avec GitHub Pages. La page `stardance.html` documente les objectifs et l'évolution du projet.
+
+### Progression
+
+- [x] HTML + CSS
+- [x] JavaScript optionnel utilisé pour les interactions
+- [x] dépôt GitHub public
+- [x] README
+- [x] plusieurs sections personnelles
+- [x] CSS personnalisé
+- [x] page Stardance
+- [ ] continuer les améliorations et publier les prochaines versions
