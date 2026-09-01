@@ -4,7 +4,7 @@
 
 ## Pourquoi j'ai créé ce site
 
-Je m'intéresse à l'informatique, Python, la programmation, la robotique, l'électronique, l'intelligence artificielle et les technologies spatiales.
+Je m'intéresse à l'informatique, Python, la programmation, la robotique, l'électronique et les technologies spatiales.
 
 Je ne veux pas présenter ces sujets comme si je les maîtrisais déjà. Le site évolue avec moi : j'ajoute mes apprentissages, mes essais, mes idées et parfois les problèmes que je rencontre.
 
@@ -33,12 +33,6 @@ Tout tient actuellement dans un seul fichier `index.html` pour rester simple à 
 Je travaille progressivement sur HTML, CSS, Flexbox, responsive design, JavaScript, manipulation du DOM et Git/GitHub.
 
 Le site n'est pas considéré comme terminé. Je veux continuer à l'améliorer au fur et à mesure que je comprends mieux le développement web.
-
-## Utilisation de l'IA
-
-J'ai utilisé ChatGPT comme assistant pendant le développement : pour discuter de l'architecture, trouver des idées, expliquer du HTML/CSS/JavaScript, relire certains choix et m'aider à modifier le code.
-
-Je ne présente pas l'IA comme l'auteur du projet. Je veux comprendre progressivement le code, le modifier moi-même et documenter les changements réels. Les prochaines versions continueront donc à évoluer à partir de ce dépôt.
 
 ## Stardance
 
