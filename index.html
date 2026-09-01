@@ -3,55 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="My Space Club, le carnet web de Marshall au Bénin : apprendre, construire et expérimenter.">
-  <meta name="theme-color" content="#08101f">
+  <meta name="description" content="My Space Club — le carnet web de Marshall au Bénin. J'y note ce que j'apprends, ce que je construis et les problèmes que je rencontre.">
+  <meta name="theme-color" content="#0d1117">
   <title>My Space Club — Marshall</title>
   <style>
     :root {
-      --fond: #08101f;
-      --fond-2: #0d1730;
-      --texte: #edf2f7;
-      --doux: #aeb9c8;
-      --bleu: #66d9ff;
-      --violet: #9b8cff;
-      --orange: #ff9d6c;
-      --jaune: #e7c85f;
-      --ligne: rgba(255,255,255,.12);
+      --fond: #0d1117;
+      --papier: #151b23;
+      --texte: #e7ebf0;
+      --gris: #9aa5b1;
+      --bleu: #78b7d9;
+      --ligne: #29313c;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      color: var(--texte);
       background: var(--fond);
+      color: var(--texte);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.65;
       overflow-x: hidden;
     }
 
+    /* Je garde le fond très simple. Je trouvais que les gros dégradés prenaient trop de place. */
     body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 15% 5%, rgba(38,103,173,.25), transparent 28%),
-        radial-gradient(circle at 90% 25%, rgba(107,74,170,.20), transparent 30%),
-        radial-gradient(circle at 60% 85%, rgba(204,92,48,.10), transparent 25%);
-    }
-
-    body::after {
       content: "";
       position: fixed;
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      opacity: .28;
-      background-image: radial-gradient(#fff 1px, transparent 1px);
-      background-size: 137px 137px;
-      background-position: 23px 31px;
+      opacity: .16;
+      background-image:
+        linear-gradient(#ffffff 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff 1px, transparent 1px);
+      background-size: 48px 48px;
     }
 
     a { color: inherit; }
@@ -64,321 +55,507 @@
       right: 0;
       z-index: 20;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 16px max(18px, calc((100vw - 1100px) / 2));
-      background: linear-gradient(rgba(8,16,31,.95), rgba(8,16,31,0));
+      justify-content: space-between;
+      padding: 17px 5vw;
+      background: rgba(13,17,23,.94);
+      border-bottom: 1px solid var(--ligne);
     }
 
     .nom {
+      color: var(--texte);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.8px;
+    }
+
+    .nom span {
+      color: var(--bleu);
+    }
+
+    .links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .links a {
+      color: var(--gris);
       text-decoration: none;
       font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: bold;
     }
-    .nom span { color: var(--bleu); }
 
-    .links { display: flex; gap: 22px; }
-    .links a {
-      color: var(--doux);
-      text-decoration: none;
-      font-size: 10px;
-      letter-spacing: 1px;
+    .links a:hover {
+      color: var(--texte);
     }
-    .links a:hover { color: white; }
 
-    .menu-bouton { display: none; }
+    .menu-bouton {
+      display: none;
+      border: 1px solid var(--ligne);
+      background: transparent;
+      color: var(--texte);
+      padding: 7px 10px;
+      cursor: pointer;
+    }
+
+    main {
+      width: min(1040px, calc(100% - 34px));
+      margin: auto;
+    }
 
     .hero {
-      width: min(1100px, calc(100% - 36px));
-      min-height: 100vh;
-      margin: auto;
-      padding: 145px 0 75px;
-      display: grid;
-      grid-template-columns: 1.35fr .65fr;
-      gap: 55px;
+      min-height: 82vh;
+      display: flex;
       align-items: center;
+      padding: 130px 0 80px;
     }
 
-    .hero-texte { position: relative; }
-    .hero-texte::before {
-      content: "";
-      position: absolute;
-      left: -18px;
-      top: 8px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 15px rgba(255,157,108,.7);
+    .hero-texte {
+      max-width: 760px;
     }
 
     .petite-ligne {
       margin: 0 0 20px;
       color: var(--bleu);
-      font-size: 10px;
-      letter-spacing: 2px;
+      font-size: 11px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(58px, 10vw, 112px);
-      line-height: .84;
-      letter-spacing: -6px;
+      max-width: 780px;
+      font-size: clamp(55px, 10vw, 104px);
+      line-height: .9;
+      letter-spacing: -5px;
+      font-weight: 700;
     }
-    h1 span { color: var(--bleu); margin-left: 35px; }
+
+    h1 span {
+      display: block;
+      margin-left: 42px;
+      color: var(--bleu);
+    }
 
     .accroche {
-      max-width: 620px;
+      max-width: 650px;
       margin: 34px 0 12px;
       font-size: clamp(18px, 2.5vw, 23px);
-      color: #d9dfe8;
+      color: #d4dae2;
     }
-    .accroche strong { color: white; font-weight: normal; }
 
     .hero-description {
-      max-width: 560px;
+      max-width: 620px;
       margin: 0;
-      color: var(--doux);
+      color: var(--gris);
       font-size: 13px;
     }
 
-    .voir {
+    .bouton {
       display: inline-block;
-      margin-top: 28px;
-      padding: 11px 17px;
-      border: 1px solid rgba(102,217,255,.65);
-      border-radius: 4px;
+      margin-top: 27px;
+      padding: 10px 15px;
+      border: 1px solid #536271;
+      border-radius: 2px;
       text-decoration: none;
-      font-size: 10px;
-      letter-spacing: 1.3px;
-    }
-    .voir:hover { background: rgba(102,217,255,.08); }
-
-    /* Je voulais un dessin simple ici. Pas besoin d'une bibliothèque pour ça. */
-    .ciel { height: 360px; position: relative; }
-    .planete {
-      position: absolute;
-      top: 80px;
-      right: 40px;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 25%, #6fd8ff 0 4%, transparent 5%), linear-gradient(145deg, #4ca9dc, #26377e 65%, #101936);
-      box-shadow: -15px 18px 35px rgba(42,130,210,.22), inset -22px -15px 25px rgba(0,0,0,.35);
-    }
-    .orbite {
-      position: absolute;
-      top: 118px;
-      right: -8px;
-      width: 285px;
-      height: 82px;
-      border: 1px solid rgba(102,217,255,.38);
-      border-radius: 50%;
-      transform: rotate(-18deg);
-    }
-    .orbite.second {
-      top: 105px;
-      right: -28px;
-      width: 315px;
-      height: 105px;
-      border-color: rgba(155,140,255,.28);
-      transform: rotate(29deg);
-    }
-    .point { position: absolute; color: var(--jaune); }
-    .point.a { right: 25px; top: 35px; }
-    .point.b { left: 25px; bottom: 55px; color: var(--orange); }
-    .coordonnees { position: absolute; right: 0; bottom: 25px; color: #59657a; font-size: 9px; letter-spacing: 1.5px; }
-
-    section {
-      width: min(1100px, calc(100% - 36px));
-      margin: auto;
-      padding: 100px 0;
-      border-top: 1px solid var(--ligne);
-    }
-
-    .titre-section { max-width: 680px; margin-bottom: 45px; }
-    .titre-section h2 {
-      margin: 0 0 12px;
-      font-size: clamp(34px, 6vw, 57px);
-      line-height: 1;
-      letter-spacing: -3px;
-    }
-    .titre-section p { margin: 0; color: var(--doux); }
-
-    .moi {
-      display: grid;
-      grid-template-columns: 1.4fr .6fr;
-      gap: 70px;
-    }
-    .moi p { color: #c2cbd7; max-width: 680px; }
-    .petite-note {
-      margin-top: 5px;
-      padding-left: 18px;
-      border-left: 1px solid rgba(102,217,255,.45);
-      color: #69768a;
       font-size: 11px;
     }
-    .petite-note em { display: block; color: #b8d9e5; font-style: normal; margin: 5px 0 25px; }
 
-    /* Les tailles ne sont pas identiques : je veux que la programmation ait plus de place. */
-    .domaines {
-      display: grid;
-      grid-template-columns: 1.25fr .75fr;
-      grid-template-areas:
-        "code robot"
-        "code electronique"
-        "python espace";
-      gap: 0;
+    .bouton:hover {
+      border-color: var(--bleu);
+      color: var(--bleu);
     }
-    .domaine {
-      padding: 27px 28px;
-      min-height: 155px;
+
+    section {
+      padding: 82px 0;
       border-top: 1px solid var(--ligne);
-      border-right: 1px solid var(--ligne);
     }
-    .domaine h3 { margin: 0 0 10px; font-size: 19px; font-weight: normal; }
-    .domaine p { margin: 0; color: var(--doux); font-size: 12px; }
-    .domaine small { display: block; margin-top: 18px; color: #657185; font-size: 9px; letter-spacing: 1px; }
-    .code { grid-area: code; min-height: 310px; padding: 38px; border-top: 2px solid var(--bleu); background: rgba(24,58,105,.20); }
-    .code h3 { font-size: 28px; }
-    .robot { grid-area: robot; border-top: 2px solid var(--violet); }
-    .electronique { grid-area: electronique; border-top: 2px solid var(--orange); }
-    .python { grid-area: python; border-top: 2px solid var(--jaune); }
-    .espace { grid-area: espace; border-top: 2px solid var(--bleu); }
 
-    .rov {
-      position: relative;
-      padding-top: 75px;
-      padding-bottom: 90px;
+    .titre {
+      max-width: 700px;
+      margin-bottom: 38px;
     }
-    .rov::after {
-      content: "";
-      position: absolute;
-      top: 55px;
-      right: 2%;
-      width: 90px;
-      height: 90px;
-      border-top: 1px solid rgba(102,217,255,.4);
-      border-right: 1px solid rgba(102,217,255,.4);
-    }
-    .rov h2 { margin: 0 0 25px; font-size: clamp(58px, 11vw, 120px); line-height: .82; letter-spacing: -7px; }
-    .rov h2 span { color: var(--orange); }
-    .rov > p { max-width: 690px; color: #bdc7d4; font-size: 15px; }
-    .infos-rov { display: flex; flex-wrap: wrap; gap: 45px; margin-top: 38px; }
-    .info-rov { min-width: 170px; }
-    .info-rov b { display: block; color: #69768a; font-size: 9px; letter-spacing: 1px; font-weight: normal; }
-    .info-rov span { display: block; margin-top: 5px; font-size: 12px; }
 
-    .chemin {
+    .titre h2 {
+      margin: 0 0 9px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1;
+      letter-spacing: -2.5px;
+    }
+
+    .titre p {
+      margin: 0;
+      color: var(--gris);
+      font-size: 14px;
+    }
+
+    /* Le journal arrive tôt : c'est plus proche de ce que je veux vraiment montrer. */
+    .journal-haut {
+      max-width: 860px;
+    }
+
+    .journal-menu {
       display: flex;
-      max-width: 850px;
-      margin-top: 55px;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 15px;
     }
-    .chemin div { flex: 1; padding: 13px 12px 0 0; border-top: 1px solid rgba(255,255,255,.2); }
-    .chemin div:first-child { border-top-color: var(--orange); }
-    .chemin strong { font-size: 10px; color: var(--jaune); font-weight: normal; }
-    .chemin p { margin: 4px 0 0; color: var(--doux); font-size: 11px; }
 
-    .journal-menu { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
     .filtre {
       border: 1px solid var(--ligne);
       background: transparent;
-      color: var(--doux);
-      padding: 7px 11px;
+      color: var(--gris);
+      padding: 7px 10px;
       cursor: pointer;
-      font-size: 10px;
+      font-size: 11px;
     }
-    .filtre.actif { border-color: var(--bleu); color: white; }
-    .journal { max-width: 850px; }
+
+    .filtre.actif {
+      color: var(--texte);
+      border-color: var(--bleu);
+    }
+
     .note {
-      display: grid;
-      grid-template-columns: 85px 1fr;
-      gap: 20px;
+      display: flex;
+      gap: 22px;
       padding: 20px 0;
       border-bottom: 1px solid var(--ligne);
     }
-    .note:nth-child(2) { padding-left: 28px; }
-    .note:nth-child(4) { padding-left: 11px; }
-    .note time { color: var(--jaune); font-size: 10px; }
-    .note h3 { margin: 0 0 4px; font-size: 15px; font-weight: normal; }
-    .note p { margin: 0; color: var(--doux); font-size: 12px; }
-    .note.cache { display: none; }
 
-    .experiences { max-width: 850px; }
-    .experience { padding: 22px 0; border-bottom: 1px solid var(--ligne); }
-    .experience:nth-child(2) { margin-left: 65px; }
-    .experience:nth-child(3) { max-width: 650px; margin-left: 25px; }
-    .experience small { color: var(--bleu); font-size: 9px; letter-spacing: 1px; }
-    .experience h3 { margin: 7px 0 4px; font-size: 20px; font-weight: normal; }
-    .experience p { margin: 0; color: var(--doux); font-size: 12px; }
+    .note-date {
+      flex: 0 0 86px;
+      color: var(--bleu);
+      font-size: 10px;
+      padding-top: 3px;
+    }
 
-    footer {
-      padding: 95px 18px 45px;
-      text-align: center;
+    .note-corps {
+      max-width: 650px;
+    }
+
+    .note h3 {
+      margin: 0 0 5px;
+      font-size: 17px;
+      font-weight: normal;
+    }
+
+    .note p {
+      margin: 0;
+      color: var(--gris);
+      font-size: 13px;
+    }
+
+    .note[data-categorie="python"] { margin-left: 0; }
+    .note[data-categorie="web"] { margin-left: 34px; }
+    .note[data-categorie="projet"] { margin-left: 12px; }
+
+    .note.cache {
+      display: none;
+    }
+
+    .moi {
+      max-width: 920px;
+      display: flex;
+      gap: 70px;
+      align-items: flex-start;
+    }
+
+    .moi-texte {
+      flex: 1 1 680px;
+    }
+
+    .moi-texte p {
+      margin-top: 0;
+      color: #c5ccd5;
+    }
+
+    .moi-note {
+      flex: 0 1 220px;
+      margin-top: 8px;
+      padding-left: 18px;
+      border-left: 1px solid #526171;
+      color: var(--gris);
+      font-size: 12px;
+    }
+
+    .moi-note strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--texte);
+      font-weight: normal;
+    }
+
+    /* Ici je préfère raconter le ROV plutôt que faire une carte de projet. */
+    .rov {
+      max-width: 900px;
+      padding-top: 95px;
+      padding-bottom: 105px;
+    }
+
+    .rov h2 {
+      margin: 0 0 20px;
+      max-width: 750px;
+      font-size: clamp(48px, 9vw, 92px);
+      line-height: .92;
+      letter-spacing: -4px;
+    }
+
+    .rov h2 span {
+      color: var(--bleu);
+    }
+
+    .rov > p {
+      max-width: 690px;
+      color: #c5ccd5;
+      font-size: 15px;
+    }
+
+    .rov-infos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 38px;
+      padding-top: 22px;
       border-top: 1px solid var(--ligne);
     }
-    footer p { max-width: 650px; margin: 0 auto 35px; font-size: clamp(26px, 5vw, 43px); line-height: 1.15; letter-spacing: -1.5px; }
-    footer small { color: #667287; letter-spacing: 1.5px; }
 
-    .apparait { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
-    .apparait.visible { opacity: 1; transform: none; }
+    .rov-info {
+      min-width: 150px;
+    }
+
+    .rov-info small {
+      display: block;
+      color: var(--gris);
+      font-size: 10px;
+      margin-bottom: 3px;
+    }
+
+    .rov-info span {
+      font-size: 13px;
+    }
+
+    .idee {
+      margin-top: 55px;
+      max-width: 640px;
+      padding: 24px 0 24px 24px;
+      border-left: 3px solid var(--bleu);
+      background: rgba(21,27,35,.55);
+    }
+
+    .idee p {
+      margin: 0;
+      color: #cbd2db;
+      font-size: 14px;
+    }
+
+    .idee small {
+      display: block;
+      margin-top: 12px;
+      color: #6f7b89;
+      font-size: 10px;
+    }
+
+    .ce-que-je-fais {
+      max-width: 850px;
+    }
+
+    .liste-apprentissage {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--ligne);
+    }
+
+    .liste-apprentissage li {
+      display: flex;
+      gap: 28px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    .liste-apprentissage strong {
+      flex: 0 0 145px;
+      font-weight: normal;
+      color: var(--texte);
+    }
+
+    .liste-apprentissage span {
+      color: var(--gris);
+      font-size: 13px;
+    }
+
+    .experiences {
+      max-width: 800px;
+    }
+
+    .experience {
+      padding: 19px 0;
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    .experience:nth-child(2) {
+      margin-left: 48px;
+    }
+
+    .experience small {
+      color: var(--bleu);
+      font-size: 10px;
+    }
+
+    .experience h3 {
+      margin: 5px 0;
+      font-size: 19px;
+      font-weight: normal;
+    }
+
+    .experience p {
+      margin: 0;
+      color: var(--gris);
+      font-size: 13px;
+    }
+
+    footer {
+      width: min(1040px, calc(100% - 34px));
+      margin: auto;
+      padding: 80px 0 45px;
+      border-top: 1px solid var(--ligne);
+    }
+
+    footer p {
+      max-width: 650px;
+      margin: 0 0 30px;
+      font-size: clamp(26px, 5vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    footer small {
+      color: #687381;
+    }
+
+    .apparait {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .45s ease, transform .45s ease;
+    }
+
+    .apparait.visible {
+      opacity: 1;
+      transform: none;
+    }
 
     @media (max-width: 760px) {
+      .bar {
+        padding: 14px 17px;
+      }
+
       .menu-bouton {
         display: block;
-        border: 1px solid var(--ligne);
-        background: transparent;
-        color: white;
-        padding: 7px 9px;
-        cursor: pointer;
-        font-size: 15px;
       }
+
       .links {
         display: none;
         position: absolute;
-        top: 55px;
-        right: 16px;
-        width: 175px;
-        padding: 10px;
-        background: #0b1427;
+        top: 54px;
+        right: 14px;
+        width: 190px;
+        padding: 8px;
+        background: var(--fond);
         border: 1px solid var(--ligne);
       }
-      .links.ouvert { display: grid; gap: 0; }
-      .links a { padding: 10px; }
 
-      .hero { grid-template-columns: 1fr; padding-top: 115px; gap: 15px; }
-      .ciel { height: 270px; }
-      .planete { width: 120px; height: 120px; right: 25%; top: 50px; }
-      .orbite { width: 235px; right: 4%; top: 78px; }
-      .orbite.second { width: 255px; right: -2%; top: 67px; }
+      .links.ouvert {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
 
-      .moi { grid-template-columns: 1fr; gap: 25px; }
-      .domaines { grid-template-columns: 1fr; grid-template-areas: "code" "robot" "electronique" "python" "espace"; }
-      .code { min-height: 0; }
-      .chemin { display: block; }
-      .chemin div { padding: 12px 0; }
-      .experience:nth-child(2), .experience:nth-child(3) { margin-left: 0; }
-    }
+      .links a {
+        padding: 10px;
+      }
 
-    @media (max-width: 430px) {
-      /* Sur les très petits écrans, le gros titre poussait le bouton hors de la largeur. */
-      .bar { padding: 13px 14px; }
-      .nom { font-size: 9px; letter-spacing: 1.4px; }
-      .hero, section { width: calc(100% - 28px); }
-      h1 { font-size: 18vw; letter-spacing: -3px; }
-      h1 span { margin-left: 16px; }
-      .accroche { font-size: 16px; }
-      .hero-description { font-size: 12px; }
-      .voir { max-width: 100%; padding-left: 13px; padding-right: 13px; }
-      .ciel { height: 220px; }
-      .planete { right: 19%; width: 95px; height: 95px; }
-      .orbite { width: 185px; height: 58px; right: 1%; }
-      .orbite.second { width: 205px; height: 67px; right: -4%; }
-      .note { grid-template-columns: 55px 1fr; gap: 12px; }
-      .note:nth-child(2), .note:nth-child(4) { padding-left: 0; }
-      .domaine, .code { padding: 23px 19px; }
-      .rov h2 { font-size: 20vw; letter-spacing: -4px; }
+      main {
+        width: calc(100% - 30px);
+      }
+
+      .hero {
+        min-height: 78vh;
+        padding-top: 105px;
+        padding-bottom: 55px;
+      }
+
+      h1 {
+        font-size: clamp(49px, 17vw, 78px);
+        letter-spacing: -3.5px;
+      }
+
+      h1 span {
+        margin-left: 22px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .titre {
+        margin-bottom: 28px;
+      }
+
+      .note {
+        display: block;
+      }
+
+      .note-date {
+        margin-bottom: 4px;
+      }
+
+      .note[data-categorie="web"],
+      .note[data-categorie="projet"] {
+        margin-left: 0;
+      }
+
+      .moi {
+        display: block;
+      }
+
+      .moi-note {
+        margin-top: 30px;
+        max-width: 330px;
+      }
+
+      .rov {
+        padding-top: 70px;
+      }
+
+      .rov h2 {
+        letter-spacing: -3px;
+      }
+
+      .rov-infos {
+        gap: 25px;
+      }
+
+      .idee {
+        margin-top: 38px;
+        padding-left: 15px;
+      }
+
+      .liste-apprentissage li {
+        display: block;
+      }
+
+      .liste-apprentissage strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .experience:nth-child(2) {
+        margin-left: 0;
+      }
+
+      footer {
+        width: calc(100% - 30px);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -388,220 +565,227 @@
   </style>
 </head>
 <body>
-  <nav class="bar" aria-label="Navigation principale">
-    <a class="nom" href="#debut">MY <span>SPACE</span> CLUB</a>
-    <button class="menu-bouton" id="menuBouton" aria-expanded="false" aria-controls="menu">☰</button>
-    <div class="links" id="menu">
-      <a href="#moi">Moi</a>
-      <a href="#domaines">Ce que j'apprends</a>
-      <a href="#rov">Le ROV</a>
+  <header class="bar">
+    <a class="nom" href="#top">MY <span>SPACE</span> CLUB</a>
+
+    <button class="menu-bouton" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="links" aria-label="Navigation principale">
       <a href="#journal">Journal</a>
+      <a href="#moi">Moi</a>
+      <a href="#rov">Le ROV</a>
+      <a href="#apprentissage">J'apprends</a>
       <a href="#experiences">Ce que je fais</a>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <main id="debut">
-    <header class="hero">
+  <main id="top">
+    <section class="hero">
       <div class="hero-texte apparait">
-        <p class="petite-ligne">DEPUIS LE BÉNIN</p>
-        <h1>MY SPACE<br><span>CLUB</span></h1>
-        <p class="accroche">Je ne sais pas encore jusqu'où j'irai. <strong>Pour l'instant, j'apprends, je construis et je teste.</strong></p>
-        <p class="hero-description">J'ai créé cet endroit pour garder une trace de ce que j'apprends, même quand ça ne marche pas du premier coup.</p>
-        <a class="voir" href="#domaines">VOIR CE QUE J'APPRENDS →</a>
+        <p class="petite-ligne">Depuis le Bénin</p>
+        <h1>MY SPACE<span>CLUB</span></h1>
+        <p class="accroche">Je ne sais pas encore jusqu'où j'irai. Pour l'instant, j'apprends, je construis et je teste.</p>
+        <p class="hero-description">J'ai commencé ce site pour garder une trace de ce que j'apprends, même quand ça ne marche pas du premier coup.</p>
+        <a class="bouton" href="#journal">Voir ce que j'apprends ↓</a>
       </div>
-      <div class="ciel apparait" aria-hidden="true">
-        <div class="orbite"></div>
-        <div class="orbite second"></div>
-        <div class="planete"></div>
-        <span class="point a">✦</span>
-        <span class="point b">·</span>
-        <span class="coordonnees">06°N · 02°E</span>
-      </div>
-    </header>
+    </section>
 
-    <section id="moi" class="apparait">
-      <div class="titre-section">
+    <section id="journal">
+      <div class="titre apparait">
+        <h2>Dernières notes</h2>
+        <p>Je ne veux pas faire semblant de tout maîtriser. Ici, je note ce qui s'est vraiment passé.</p>
+      </div>
+
+      <div class="journal-haut apparait">
+        <div class="journal-menu" aria-label="Filtrer le journal">
+          <button class="filtre actif" type="button" data-filtre="tout">Tout</button>
+          <button class="filtre" type="button" data-filtre="python">Python</button>
+          <button class="filtre" type="button" data-filtre="web">Web</button>
+          <button class="filtre" type="button" data-filtre="projet">Projet</button>
+        </div>
+
+        <article class="note" data-categorie="python">
+          <time class="note-date" datetime="2026-08-26">26 août 2026</time>
+          <div class="note-corps">
+            <h3>Je comprends enfin ce que veut dire string</h3>
+            <p>Au début je mélangeais « string » et « str ». Maintenant je sais que string est le texte et que <strong>str</strong> est le type en Python. C'est simple, mais il fallait que je le comprenne vraiment.</p>
+          </div>
+        </article>
+
+        <article class="note" data-categorie="web">
+          <time class="note-date" datetime="2026-08-31">31 août 2026</time>
+          <div class="note-corps">
+            <h3>Le site commençait à trop ressembler à un template</h3>
+            <p>J'ai regardé la page et je me suis dit que quelque chose n'allait pas. Trop de cartes, trop d'éléments parfaitement alignés. J'ai décidé de reprendre la structure plutôt que d'ajouter encore des effets.</p>
+          </div>
+        </article>
+
+        <article class="note" data-categorie="projet">
+          <time class="note-date" datetime="2026-09-01">1 septembre 2026</time>
+          <div class="note-corps">
+            <h3>Le ROV reste une idée, et c'est normal</h3>
+            <p>Je n'ai pas encore un ROV fonctionnel. Pour le moment je cherche à comprendre l'électronique, les moteurs et la programmation avant de fabriquer quelque chose que je ne saurais pas réparer.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="moi">
+      <div class="titre apparait">
         <h2>Moi, c'est Marshall.</h2>
         <p>Pas grand-chose à présenter comme un CV ici. Je préfère raconter ce que j'essaie de comprendre.</p>
       </div>
-      <div class="moi">
-        <div>
-          <p>Je viens du Bénin et je suis passionné par la technologie. J'aime savoir comment les choses fonctionnent et surtout les fabriquer moi-même quand j'en ai l'occasion.</p>
-          <p>En ce moment, je touche à Python, à l'informatique, à la robotique, à l'électronique, à l'IA et aux technologies spatiales. Je sais que ça fait beaucoup. Mais justement, j'ai envie de comprendre les bases de plusieurs domaines avant de choisir où aller plus loin.</p>
-          <p>Ce site va donc changer. Certaines idées vont disparaître, d'autres vont devenir des projets. Je préfère montrer ça plutôt que faire semblant d'avoir déjà tout compris.</p>
+
+      <div class="moi apparait">
+        <div class="moi-texte">
+          <p>Je viens du Bénin et je suis passionné par la technologie. J'aime savoir comment les choses fonctionnent et surtout fabriquer moi-même quand j'en ai l'occasion.</p>
+          <p>En ce moment, je touche à Python, à l'informatique, à la robotique, à l'électronique, à l'IA et aux technologies spatiales. Je sais que ça fait beaucoup. Justement, j'ai envie de comprendre les bases avant de choisir où aller plus loin.</p>
+          <p>Ce site va changer. Certaines idées vont disparaître, d'autres vont devenir des projets. Je préfère montrer ça plutôt que faire semblant d'avoir déjà tout compris.</p>
         </div>
-        <aside class="petite-note">
-          Une règle que j'essaie de garder en tête :
-          <em>comprendre d'abord, construire ensuite.</em>
+
+        <aside class="moi-note">
+          <strong>Une règle que j'essaie de garder.</strong>
+          Comprendre d'abord, construire ensuite.
+          <br><br>
           Et quand ça ne marche pas, regarder pourquoi.
         </aside>
       </div>
     </section>
 
-    <section id="domaines" class="apparait">
-      <div class="titre-section">
-        <h2>Ce que j'apprends en ce moment.</h2>
-        <p>Je ne mets pas de niveaux artificiels. Si je suis débutant, je préfère le dire.</p>
-      </div>
-      <div class="domaines">
-        <article class="domaine code">
-          <h3>Informatique</h3>
-          <p>Comprendre les systèmes, apprendre à résoudre les problèmes et devenir plus autonome devant un ordinateur.</p>
-          <small>J'ESSAIE DE COMPRENDRE LE POURQUOI</small>
-        </article>
-        <article class="domaine robot">
-          <h3>Robotique</h3>
-          <p>Faire passer une idée du code vers une machine qui bouge réellement.</p>
-          <small>LE ROV EST MON GRAND OBJECTIF</small>
-        </article>
-        <article class="domaine electronique">
-          <h3>Électronique</h3>
-          <p>Circuits, composants, capteurs : comprendre ce qui se passe entre le logiciel et le monde réel.</p>
-          <small>APPRENDRE EN TESTANT</small>
-        </article>
-        <article class="domaine python">
-          <h3>Python</h3>
-          <p>Je reprends les bases tranquillement. Les chaînes de caractères et les types sont déjà plus clairs qu'au début.</p>
-          <small>EN APPRENTISSAGE</small>
-        </article>
-        <article class="domaine espace">
-          <h3>Espace</h3>
-          <p>Je m'intéresse aux machines, aux missions et aux technologies qui permettent d'explorer des endroits difficiles.</p>
-          <small>ÇA ME REND CURIEUX</small>
-        </article>
+    <section id="rov" class="rov">
+      <div class="apparait">
+        <p class="petite-ligne">Un projet que je veux construire</p>
+        <h2>Le <span>ROV</span></h2>
+        <p>Un petit véhicule sous-marin télécommandé. Pour l'instant, il est surtout dans ma tête et dans mes notes. Avant de le mettre dans l'eau, je dois apprendre assez de choses pour savoir ce que je fabrique.</p>
+
+        <div class="rov-infos">
+          <div class="rov-info">
+            <small>Électronique</small>
+            <span>À comprendre</span>
+          </div>
+          <div class="rov-info">
+            <small>Programmation</small>
+            <span>Python d'abord</span>
+          </div>
+          <div class="rov-info">
+            <small>Construction</small>
+            <span>Pas encore commencée</span>
+          </div>
+        </div>
+
+        <div class="idee">
+          <p>Je veux pouvoir expliquer chaque pièce du ROV avant de dire qu'il est terminé. Même si ça prend du temps.</p>
+          <small>Note de projet — à revoir quand le premier prototype existera.</small>
+        </div>
       </div>
     </section>
 
-    <section id="rov" class="rov apparait">
-      <div class="titre-section">
-        <h2>Le projet que j'ai vraiment envie de voir exister.</h2>
+    <section id="apprentissage">
+      <div class="titre apparait">
+        <h2>Ce que j'apprends en ce moment</h2>
+        <p>Pas de classement. Je passe d'un sujet à l'autre selon ce que j'essaie de construire.</p>
       </div>
-      <h2>PROJECT <span>ROV</span></h2>
-      <p>Je veux un jour construire un ROV sous-marin capable d'explorer les eaux du Bénin. Pour le moment, il n'y a pas encore de robot à montrer. Il y a surtout beaucoup de choses que je dois apprendre avant.</p>
-      <div class="infos-rov">
-        <div class="info-rov"><b>POURQUOI</b><span>Explorer les eaux du Bénin</span></div>
-        <div class="info-rov"><b>AUJOURD'HUI</b><span>Une idée et un objectif d'apprentissage</span></div>
-        <div class="info-rov"><b>IL FAUDRA</b><span>Code · électronique · robotique · mécanique</span></div>
-      </div>
-      <div class="chemin" aria-label="Étapes envisagées pour le projet ROV">
-        <div><strong>01</strong><p>Apprendre</p></div>
-        <div><strong>02</strong><p>Faire un premier prototype</p></div>
-        <div><strong>03</strong><p>Tester</p></div>
-        <div><strong>04</strong><p>Corriger</p></div>
-        <div><strong>05</strong><p>Explorer</p></div>
+
+      <div class="ce-que-je-fais apparait">
+        <ul class="liste-apprentissage">
+          <li><strong>Python</strong><span>Variables, strings, conditions, boucles et petites expériences pour comprendre la logique.</span></li>
+          <li><strong>Web</strong><span>HTML, CSS et JavaScript. J'apprends surtout en cassant puis en réparant mes propres pages.</span></li>
+          <li><strong>Robotique</strong><span>Moteurs, capteurs et contrôle. Je veux comprendre comment le logiciel et le matériel travaillent ensemble.</span></li>
+          <li><strong>Électronique</strong><span>Les bases dont j'aurai besoin pour arrêter de regarder les circuits comme des choses mystérieuses.</span></li>
+          <li><strong>Espace</strong><span>Un sujet qui m'intéresse depuis longtemps et qui rejoint naturellement mon idée de construire des choses.</span></li>
+        </ul>
       </div>
     </section>
 
-    <section id="journal" class="apparait">
-      <div class="titre-section">
-        <h2>Quelques notes que je ne veux pas perdre.</h2>
-        <p>Le journal pourra grandir avec mes apprentissages. Les boutons ci-dessous sont une petite fonctionnalité JavaScript que je pourrai améliorer plus tard.</p>
+    <section id="experiences">
+      <div class="titre apparait">
+        <h2>Ce que je fais</h2>
+        <p>Quelques traces de ce que j'ai commencé. La liste grandira si les projets survivent à mes essais.</p>
       </div>
-      <div class="journal-menu" aria-label="Filtrer le journal">
-        <button class="filtre actif" data-filtre="tous">Tout</button>
-        <button class="filtre" data-filtre="code">Code</button>
-        <button class="filtre" data-filtre="web">Web</button>
-        <button class="filtre" data-filtre="hardware">Électronique</button>
-      </div>
-      <div class="journal">
-        <article class="note" data-categorie="code">
-          <time datetime="2026-08">001</time>
-          <div><h3>Python : mes premiers vrais repères</h3><p>Je découvre les chaînes de caractères, les types et <code>print()</code>. Ce sont de petites choses, mais je veux vraiment les comprendre.</p></div>
-        </article>
-        <article class="note" data-categorie="web">
-          <time datetime="2026-08">002</time>
-          <div><h3>Mon site commence à prendre forme</h3><p>HTML, CSS, puis quelques lignes de JavaScript. Je comprends petit à petit ce que chaque partie fait.</p></div>
-        </article>
-        <article class="note" data-categorie="web">
-          <time datetime="2026-08">003</time>
-          <div><h3>GitHub : je découvre le principe</h3><p>Un dépôt, des fichiers, des commits et GitHub Pages. Au début, ce n'était pas très clair.</p></div>
-        </article>
-        <article class="note" data-categorie="hardware">
-          <time datetime="2026-08">004</time>
-          <div><h3>Je veux comprendre l'électronique</h3><p>Je m'intéresse aux circuits, aux composants et à Arduino. Il me reste beaucoup à apprendre.</p></div>
-        </article>
-        <article class="note" data-categorie="hardware">
-          <time datetime="2026-08">005</time>
-          <div><h3>L'idée du ROV revient toujours</h3><p>Plus j'y pense, plus je vois tout ce qu'il faudrait apprendre. Ça me donne surtout envie de commencer par les bases.</p></div>
-        </article>
-      </div>
-    </section>
 
-    <section id="experiences" class="apparait">
-      <div class="titre-section">
-        <h2>Ce que je fais pour de vrai.</h2>
-        <p>Pas de liste de projets inventés. Seulement ce qui existe réellement ou ce qui est clairement encore une idée.</p>
-      </div>
-      <div class="experiences">
+      <div class="experiences apparait">
         <article class="experience">
-          <small>EN CONSTRUCTION</small>
+          <small>WEB — 2026</small>
           <h3>My Space Club</h3>
-          <p>Mon site personnel, construit avec HTML, CSS et JavaScript et publié avec GitHub Pages.</p>
+          <p>Mon premier vrai site personnel sur GitHub Pages. Je le modifie petit à petit au lieu d'essayer de tout réussir d'un coup.</p>
         </article>
+
         <article class="experience">
-          <small>EN APPRENTISSAGE</small>
+          <small>ROBOTIQUE — EN PRÉPARATION</small>
+          <h3>Projet ROV</h3>
+          <p>Un projet à long terme. Pour l'instant, les recherches et les apprentissages comptent autant que le futur prototype.</p>
+        </article>
+
+        <article class="experience">
+          <small>APPRENTISSAGE — EN COURS</small>
           <h3>Python</h3>
-          <p>Je travaille les bases avant de chercher à faire des choses compliquées.</p>
-        </article>
-        <article class="experience">
-          <small>IDÉE / LONG TERME</small>
-          <h3>Un ROV sous-marin</h3>
-          <p>Pas encore construit. C'est un objectif qui va me servir de fil conducteur pour apprendre la programmation, l'électronique et la robotique.</p>
+          <p>Je pars des bases et j'écris des petits programmes pour vérifier que j'ai réellement compris.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Je ne sais pas encore jusqu'où cette aventure ira.<br>Mais je compte bien le découvrir.</p>
-    <small>MY SPACE CLUB · MARSHALL · BÉNIN</small>
+    <p>Je ne sais pas encore jusqu'où j'irai. Je vais déjà voir ce que je peux construire.</p>
+    <small>My Space Club · Marshall · Bénin · 2026</small>
   </footer>
 
   <script>
-    // Le menu mobile : rien de compliqué, juste ajouter/enlever une classe.
-    const boutonMenu = document.querySelector('#menuBouton');
-    const menu = document.querySelector('#menu');
+    // Le menu est volontairement simple : je voulais comprendre le toggle avant d'ajouter autre chose.
+    const boutonMenu = document.querySelector('.menu-bouton');
+    const liens = document.querySelector('.links');
 
-    boutonMenu.addEventListener('click', () => {
-      const ouvert = menu.classList.toggle('ouvert');
+    boutonMenu.addEventListener('click', function () {
+      const ouvert = liens.classList.toggle('ouvert');
       boutonMenu.setAttribute('aria-expanded', ouvert);
+      boutonMenu.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
     });
 
-    // Quand on choisit une rubrique, on cache les notes qui ne correspondent pas.
-    const boutons = document.querySelectorAll('.filtre');
+    // Sur téléphone, le menu se ferme quand on choisit une page.
+    document.querySelectorAll('.links a').forEach(function (lien) {
+      lien.addEventListener('click', function () {
+        liens.classList.remove('ouvert');
+        boutonMenu.setAttribute('aria-expanded', 'false');
+        boutonMenu.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+
+    // Petit filtre du journal. Pas besoin de librairie pour trois catégories.
+    const filtres = document.querySelectorAll('.filtre');
     const notes = document.querySelectorAll('.note');
 
-    boutons.forEach((bouton) => {
-      bouton.addEventListener('click', () => {
-        boutons.forEach((b) => b.classList.remove('actif'));
-        bouton.classList.add('actif');
+    filtres.forEach(function (filtre) {
+      filtre.addEventListener('click', function () {
+        const choix = filtre.dataset.filtre;
 
-        const choix = bouton.dataset.filtre;
-        notes.forEach((note) => {
-          const montrer = choix === 'tous' || note.dataset.categorie === choix;
-          note.classList.toggle('cache', !montrer);
+        filtres.forEach(function (autre) {
+          autre.classList.remove('actif');
+        });
+        filtre.classList.add('actif');
+
+        notes.forEach(function (note) {
+          const montre = choix === 'tout' || note.dataset.categorie === choix;
+          note.classList.toggle('cache', !montre);
         });
       });
     });
 
-    // Je préfère cette petite API native à une bibliothèque juste pour faire apparaître des sections.
-    const observateur = new IntersectionObserver((elements) => {
-      elements.forEach((element) => {
-        if (element.isIntersecting) {
-          element.target.classList.add('visible');
-          observateur.unobserve(element.target);
+    // Je teste IntersectionObserver ici pour comprendre comment déclencher une animation quand un bloc arrive à l'écran.
+    const blocs = document.querySelectorAll('.apparait');
+
+    const observateur = new IntersectionObserver(function (entrees) {
+      entrees.forEach(function (entree) {
+        if (entree.isIntersecting) {
+          entree.target.classList.add('visible');
+          observateur.unobserve(entree.target);
         }
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.apparait').forEach((element) => observateur.observe(element));
-
-    // Fermer le menu après avoir choisi une section sur téléphone.
-    menu.querySelectorAll('a').forEach((lien) => {
-      lien.addEventListener('click', () => {
-        menu.classList.remove('ouvert');
-        boutonMenu.setAttribute('aria-expanded', 'false');
-      });
+    blocs.forEach(function (bloc) {
+      observateur.observe(bloc);
     });
   </script>
 </body>
